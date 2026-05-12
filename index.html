@@ -53,24 +53,24 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 @media(max-width:640px){.hdr-nav{display:none}}
 
 /* ── HERO ── */
-#hero{height:100vh;min-height:600px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('25_0824.01_44_27_06.静止画041.jpg') center/cover no-repeat;transform:scale(1.05);transition:transform 8s ease}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,rgba(6,95,70,.75) 0%,rgba(15,23,42,.55) 60%,rgba(15,23,42,.75) 100%)}
-.hero-body{position:relative;z-index:2;text-align:center;padding:0 20px;max-width:780px}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.15);border:1.5px solid rgba(255,255,255,.4);backdrop-filter:blur(8px);color:#fff;border-radius:30px;padding:6px 20px;font-size:.85rem;font-weight:700;margin-bottom:22px;letter-spacing:.06em}
-.hero-badge span{background:var(--orange);border-radius:20px;padding:2px 12px;font-size:.78rem}
-.hero-h1{font-size:clamp(2rem,6vw,3.6rem);font-weight:900;color:#fff;line-height:1.2;letter-spacing:.03em;text-shadow:0 2px 20px rgba(0,0,0,.3)}
-.hero-h1 em{color:var(--amber);font-style:normal}
-.hero-date{margin:18px 0 28px;font-size:clamp(1rem,3vw,1.35rem);color:rgba(255,255,255,.9);font-weight:700;letter-spacing:.08em}
-.hero-date b{color:var(--amber)}
+#hero{height:100vh;min-height:600px;position:relative;display:flex;align-items:flex-start;justify-content:center;overflow:hidden;background:#fde8d0}
+.hero-bg{position:absolute;inset:0;background:url('IMG_4305.png') center bottom/cover no-repeat;transform:scale(1.05);transition:transform 8s ease}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(253,216,178,.93) 0%,rgba(253,216,178,.65) 42%,rgba(253,216,178,.05) 72%,transparent 100%)}
+.hero-body{position:relative;z-index:2;text-align:center;padding:96px 20px 0;max-width:780px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.85);border:1.5px solid rgba(16,185,129,.45);backdrop-filter:blur(8px);color:var(--green-d);border-radius:30px;padding:6px 20px;font-size:.85rem;font-weight:700;margin-bottom:22px;letter-spacing:.06em}
+.hero-badge span{background:var(--orange);color:#fff;border-radius:20px;padding:2px 12px;font-size:.78rem}
+.hero-h1{font-size:clamp(2rem,6vw,3.6rem);font-weight:900;color:var(--green-d);line-height:1.2;letter-spacing:.03em;text-shadow:0 2px 12px rgba(255,255,255,.7)}
+.hero-h1 em{color:var(--orange);font-style:normal}
+.hero-date{margin:18px 0 28px;font-size:clamp(1rem,3vw,1.35rem);color:#374151;font-weight:700;letter-spacing:.08em}
+.hero-date b{color:var(--orange)}
 .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .btn-primary{background:var(--orange);color:#fff;padding:14px 36px;border-radius:50px;font-weight:900;font-size:1rem;text-decoration:none;box-shadow:0 6px 24px rgba(249,115,22,.5);transition:all .25s;display:inline-flex;align-items:center;gap:8px}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(249,115,22,.6)}
-.btn-outline{background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.7);color:#fff;padding:14px 32px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;backdrop-filter:blur(4px);transition:all .25s}
-.btn-outline:hover{background:rgba(255,255,255,.25)}
-.hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.7);font-size:.75rem;font-weight:700;animation:bounce2 2s infinite}
+.btn-outline{background:rgba(255,255,255,.65);border:2px solid var(--green);color:var(--green-d);padding:14px 32px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;backdrop-filter:blur(4px);transition:all .25s}
+.btn-outline:hover{background:rgba(255,255,255,.9)}
+.hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--green-d);font-size:.75rem;font-weight:700;animation:bounce2 2s infinite}
 @keyframes bounce2{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
-.hero-photo-note{position:absolute;bottom:70px;right:20px;background:rgba(0,0,0,.45);color:rgba(255,255,255,.8);font-size:.7rem;padding:4px 12px;border-radius:20px;backdrop-filter:blur(4px)}
+.hero-photo-note{display:none}
 
 /* ── WAVE ── */
 .wave{line-height:0;overflow:hidden}
@@ -259,12 +259,12 @@ body.banner-gone #news-banner{display:none}
 
 /* ── COUNTDOWN ── */
 .countdown-wrap{margin:22px 0 28px;display:flex;flex-direction:column;align-items:center;gap:10px}
-.cd-label{color:rgba(255,255,255,.8);font-size:.8rem;font-weight:700;letter-spacing:.1em}
+.cd-label{color:var(--green-d);font-size:.8rem;font-weight:700;letter-spacing:.1em}
 .countdown-units{display:flex;gap:12px;align-items:center}
-.cd-unit{text-align:center;background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.3);backdrop-filter:blur(8px);border-radius:12px;padding:10px 14px;min-width:60px}
-.cd-num{font-size:2rem;font-weight:900;color:#fff;line-height:1;letter-spacing:.02em}
-.cd-name{font-size:.62rem;color:rgba(255,255,255,.7);font-weight:700;margin-top:4px;letter-spacing:.06em}
-.cd-sep{font-size:1.6rem;font-weight:900;color:rgba(255,255,255,.5);margin-bottom:12px}
+.cd-unit{text-align:center;background:rgba(255,255,255,.78);border:1.5px solid rgba(16,185,129,.35);backdrop-filter:blur(8px);border-radius:12px;padding:10px 14px;min-width:60px}
+.cd-num{font-size:2rem;font-weight:900;color:var(--green-d);line-height:1;letter-spacing:.02em}
+.cd-name{font-size:.62rem;color:var(--green);font-weight:700;margin-top:4px;letter-spacing:.06em}
+.cd-sep{font-size:1.6rem;font-weight:900;color:var(--orange);margin-bottom:12px}
 
 /* ── STATS ── */
 #stats{background:var(--green-d);padding:64px 20px}
@@ -443,9 +443,8 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
 
   <div class="hero-scroll">
     <span>SCROLL</span>
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10l6 6 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10l6 6 6-6" stroke="#065f46" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
   </div>
-  <div class="hero-photo-note" style="font-size:.68rem;padding:4px 10px">第26回（2025年）の様子</div>
 </section>
 
 <!-- INFO BAR -->
