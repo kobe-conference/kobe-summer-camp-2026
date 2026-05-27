@@ -210,6 +210,14 @@ section,.sect{padding:72px 20px}
 .contact-inner p{color:rgba(255,255,255,.85);font-size:.95rem;margin-bottom:8px}
 .contact-inner a{color:var(--amber);font-weight:900;font-size:1.1rem}
 .deadline{display:inline-block;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.4);color:#fff;font-weight:900;font-size:1rem;padding:10px 32px;border-radius:30px;margin-top:20px;letter-spacing:.05em}
+.dl-cd{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;justify-content:center;margin-top:18px;padding:14px 28px;background:rgba(255,255,255,.12);border:2px solid rgba(255,200,100,.5);border-radius:20px}
+.dl-cd-label{color:rgba(255,255,255,.9);font-size:.82rem;font-weight:700;width:100%;text-align:center;letter-spacing:.04em}
+.dl-cd-block{text-align:center;min-width:44px}
+.dl-cd-num{font-size:2rem;font-weight:900;color:#fbbf24;line-height:1;font-variant-numeric:tabular-nums}
+.dl-cd-unit{font-size:.7rem;color:rgba(255,255,255,.75);margin-top:2px}
+.dl-cd-sep{font-size:1.4rem;font-weight:900;color:#fbbf24;line-height:1}
+.deadline-badge{display:inline-flex;align-items:center;gap:6px;background:#ef4444;color:#fff;font-size:.78rem;font-weight:800;padding:3px 10px;border-radius:20px;margin-left:8px;vertical-align:middle;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.7}}
 .contact-inner .btn-primary{margin-top:20px;font-size:1.05rem}
 
 /* ── ACCESS ── */
@@ -497,7 +505,7 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
           <div class="ac-row"><span class="ac-l">日時</span><span>受付 <strong>2026年8月1日(土) 14:30〜</strong>（開会式 16:00）〜8月2日(日) 14:00 解散</span></div>
           <div class="ac-row"><span class="ac-l">会場</span><span>神戸市立自然の家「そうぞうのすみか」六甲施設<br><small style="color:#6b7280">兵庫県神戸市灘区六甲山町中一里山1-1</small></span></div>
           <div class="ac-row"><span class="ac-l">対象</span><span>口唇口蓋裂のお子さんとそのご家族</span></div>
-          <div class="ac-row"><span class="ac-l">締切</span><span style="color:#ef4444;font-weight:900">2026年7月31日(金)</span></div>
+          <div class="ac-row"><span class="ac-l">締切</span><span style="color:#ef4444;font-weight:900">2026年7月31日(金)<span class="deadline-badge" id="dl-badge">--日後</span></span></div>
         </div>
       </div>
       <div class="reveal-r">
@@ -814,7 +822,16 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
     <p style="margin-top:12px"><strong style="color:#fff">神戸カンファレンス 事務局</strong></p>
     <p>医療法人仁山会 山本歯科医院 矯正歯科クリニック 内<br>〒662-0813 兵庫県西宮市仁川町2-3-8</p>
     <p style="margin-top:12px">📧 <a href="mailto:kobecon23@gmail.com">kobecon23@gmail.com</a></p>
-    <div class="deadline">📋 申し込み締め切り：2026年7月31日（金）</div>
+    <div class="dl-cd">
+      <div class="dl-cd-label">⏰ 申し込み締め切り（2026年7月31日）まで</div>
+      <div class="dl-cd-block"><div class="dl-cd-num" id="dl-days">--</div><div class="dl-cd-unit">日</div></div>
+      <div class="dl-cd-sep">:</div>
+      <div class="dl-cd-block"><div class="dl-cd-num" id="dl-hours">--</div><div class="dl-cd-unit">時間</div></div>
+      <div class="dl-cd-sep">:</div>
+      <div class="dl-cd-block"><div class="dl-cd-num" id="dl-mins">--</div><div class="dl-cd-unit">分</div></div>
+      <div class="dl-cd-sep">:</div>
+      <div class="dl-cd-block"><div class="dl-cd-num" id="dl-secs">--</div><div class="dl-cd-unit">秒</div></div>
+    </div>
     <br>
     <a href="#apply" class="btn-primary" style="margin-top:20px;display:inline-flex">📋 申し込みフォームへ</a>
     <div class="sns-share">
@@ -1029,6 +1046,27 @@ function updateCountdown(){
   set('cd-days',d);set('cd-hours',h);set('cd-mins',m);set('cd-secs',s)
 }
 setInterval(updateCountdown,1000);updateCountdown()
+
+// ── DEADLINE COUNTDOWN ──
+function updateDeadline(){
+  const target=new Date('2026-07-31T23:59:59+09:00')
+  const diff=target-new Date()
+  const badge=document.getElementById('dl-badge')
+  if(diff<=0){
+    const box=document.getElementById('dl-days')
+    if(box)box.closest('.dl-cd').innerHTML='<div style="color:#fbbf24;font-weight:900;font-size:1rem">⚠️ 申し込み締め切りを過ぎています</div>'
+    if(badge)badge.textContent='締切済'
+    return
+  }
+  const d=Math.floor(diff/86400000)
+  const h=Math.floor((diff%86400000)/3600000)
+  const m=Math.floor((diff%3600000)/60000)
+  const s=Math.floor((diff%60000)/1000)
+  const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=String(v).padStart(2,'0')}
+  set('dl-days',d);set('dl-hours',h);set('dl-mins',m);set('dl-secs',s)
+  if(badge)badge.textContent='あと'+d+'日'
+}
+setInterval(updateDeadline,1000);updateDeadline()
 
 // ── STATS COUNTER ──
 function animateCounter(el){
