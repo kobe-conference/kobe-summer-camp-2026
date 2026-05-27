@@ -603,8 +603,8 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
       <div class="tl-item show"><div class="tl-dot"></div><div class="tl-time">午後 2:30</div><div class="tl-body"><strong><span class="tl-badge tb-all">全員</span>集会・受付開始</strong></div></div>
       <div class="tl-item show"><div class="tl-dot"></div><div class="tl-time">午後 4:00</div><div class="tl-body"><strong><span class="tl-badge tb-all">全員</span>開会式</strong></div></div>
       <div class="tl-item show"><div class="tl-dot"></div><div class="tl-time">午後 6:00</div><div class="tl-body"><strong><span class="tl-badge tb-all">全員</span>夕食</strong></div></div>
-      <div class="tl-item show"><div class="tl-dot orange"></div><div class="tl-time">午後 7:30</div><div class="tl-body"><strong><span class="tl-badge tb-child">お子様</span>キャンプファイヤー / 歯磨き指導</strong><p>担当：小島 將督先生、中島 健吾先生<br>夜の六甲山で大きな炎を囲んで！</p></div></div>
-      <div class="tl-item show"><div class="tl-dot sky"></div><div class="tl-time">午後 7:30</div><div class="tl-body"><strong><span class="tl-badge tb-parent">保護者様</span>口蓋裂治療勉強会 Part1</strong><p>講師：山本一郎先生、上田晃一先生ほか<br>＊講演後、時間の許す限り個別に質問を受け付けます。各方面の専門医がおります。ざっくばらんにお話しください。</p></div></div>
+      <div class="tl-item show"><div class="tl-dot orange"></div><div class="tl-time">午後 7:30</div><div class="tl-body"><strong><span class="tl-badge tb-child">お子様</span>キャンプファイヤー / 歯磨き指導</strong><p>担当：片岡 和哉先生、小島 将督先生<br>夜の六甲山で大きな炎を囲んで！</p></div></div>
+      <div class="tl-item show"><div class="tl-dot sky"></div><div class="tl-time">午後 7:30</div><div class="tl-body"><strong><span class="tl-badge tb-parent">保護者様</span>口蓋裂治療勉強会 Part1</strong><p>講師：山本一郎先生、上田晃一先生、松本学先生ほか<br>＊講演後、時間の許す限り個別に質問を受け付けます。各方面の専門医がおります。ざっくばらんにお話しください。</p></div></div>
       <div class="tl-item show"><div class="tl-dot"></div><div class="tl-time">午後 9:00</div><div class="tl-body"><strong><span class="tl-badge tb-all">全員</span>懇親会</strong></div></div>
     </div>
     <div class="timeline reveal" id="day2" style="display:none">
@@ -684,6 +684,8 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
       <button class="dept-tab active" onclick="switchDept('ps')">🏥 形成外科</button>
       <button class="dept-tab" onclick="switchDept('ortho')">🦷 矯正歯科</button>
       <button class="dept-tab" onclick="switchDept('st')">🗣 言語治療</button>
+      <button class="dept-tab" onclick="switchDept('ob')">🩺 産婦人科</button>
+      <button class="dept-tab" onclick="switchDept('cp')">🧠 臨床心理士</button>
     </div>
 
 
@@ -691,16 +693,33 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
       <div class="staff-card"><div class="sc-bar"></div><div class="sc-body"><span class="sc-dept ps">🏥 形成外科</span><div class="sc-name">上田 晃一</div><div class="sc-org">大阪府済生会吹田病院<br>大阪医科薬科大学 名誉教授</div></div></div>
       <div class="staff-card"><div class="sc-bar"></div><div class="sc-body"><span class="sc-dept ps">🏥 形成外科</span><div class="sc-name">益岡 弘</div><div class="sc-org">関西医科大学 形成外科</div></div></div>
       <div class="staff-card"><div class="sc-bar"></div><div class="sc-body"><span class="sc-dept ps">🏥 形成外科</span><div class="sc-name">木村 得尚</div><div class="sc-org">広島市民病院 形成外科</div></div></div>
+      <div class="staff-card"><div class="sc-bar"></div><div class="sc-body"><span class="sc-dept ps">🏥 形成外科</span><div class="sc-name">池田 実香</div><div class="sc-org">神戸医療センター中央市民病院</div></div></div>
+      <div class="staff-card"><div class="sc-bar"></div><div class="sc-body"><span class="sc-dept ps">🏥 形成外科</span><div class="sc-name">片岡 和哉</div><div class="sc-org">神戸医療センター中央市民病院</div></div></div>
+      <div class="staff-card"><div class="sc-bar"></div><div class="sc-body"><span class="sc-dept ps">🏥 形成外科</span><div class="sc-name">澤田 正樹</div><div class="sc-org">さわだクリニック</div></div></div>
+      <div class="staff-card"><div class="sc-bar"></div><div class="sc-body"><span class="sc-dept ps">🏥 形成外科</span><div class="sc-name">福井 充香</div><div class="sc-org">関西医科大学 形成外科学講座</div></div></div>
     </div>
 
     <div class="staff-panel reveal" id="ortho">
       <div class="staff-card"><div class="sc-bar blue"></div><div class="sc-body"><span class="sc-dept ortho">🦷 矯正歯科</span><div class="sc-name">山本 一郎</div><div class="sc-org">山本歯科医院 矯正歯科クリニック</div></div></div>
-      <div class="staff-card"><div class="sc-bar blue"></div><div class="sc-body"><span class="sc-dept ortho">🦷 矯正歯科</span><div class="sc-name">小島 將督</div><div class="sc-org">こじま矯正歯科</div></div></div>
+      <div class="staff-card"><div class="sc-bar blue"></div><div class="sc-body"><span class="sc-dept ortho">🦷 矯正歯科</span><div class="sc-name">山本 直</div><div class="sc-org">山本歯科医院 矯正歯科クリニック</div></div></div>
+      <div class="staff-card"><div class="sc-bar blue"></div><div class="sc-body"><span class="sc-dept ortho">🦷 矯正歯科</span><div class="sc-name">小島 将督</div><div class="sc-org">こじま矯正歯科</div></div></div>
       <div class="staff-card"><div class="sc-bar blue"></div><div class="sc-body"><span class="sc-dept ortho">🦷 矯正歯科</span><div class="sc-name">中島 健吾</div><div class="sc-org">イロドリ矯正歯科</div></div></div>
     </div>
 
     <div class="staff-panel reveal" id="st">
       <div class="staff-card"><div class="sc-bar purple"></div><div class="sc-body"><span class="sc-dept st">🗣 言語聴覚士</span><div class="sc-name">岩城 忍</div><div class="sc-org">神戸大学医学部附属病院 耳鼻咽喉科</div></div></div>
+      <div class="staff-card"><div class="sc-bar purple"></div><div class="sc-body"><span class="sc-dept st">🗣 言語聴覚士</span><div class="sc-name">石木 陽介</div><div class="sc-org">山本歯科医院 矯正歯科クリニック</div></div></div>
+      <div class="staff-card"><div class="sc-bar purple"></div><div class="sc-body"><span class="sc-dept st">🗣 言語聴覚士</span><div class="sc-name">高井 佑実</div><div class="sc-org">関西医科大学附属病院 形成外科</div></div></div>
+      <div class="staff-card"><div class="sc-bar purple"></div><div class="sc-body"><span class="sc-dept st">🗣 言語聴覚士</span><div class="sc-name">前川 圭子</div><div class="sc-org">神戸医療センター中央市民病院 耳鼻咽喉科</div></div></div>
+      <div class="staff-card"><div class="sc-bar purple"></div><div class="sc-body"><span class="sc-dept st">🗣 言語聴覚士</span><div class="sc-name">守屋 ゆう子</div><div class="sc-org">山本歯科医院 矯正歯科クリニック</div></div></div>
+    </div>
+
+    <div class="staff-panel reveal" id="ob">
+      <div class="staff-card"><div class="sc-bar" style="background:#f59e0b"></div><div class="sc-body"><span class="sc-dept" style="background:#fef3c7;color:#92400e">🩺 産婦人科</span><div class="sc-name">上田 優輔</div><div class="sc-org">京都大学病院</div></div></div>
+    </div>
+
+    <div class="staff-panel reveal" id="cp">
+      <div class="staff-card"><div class="sc-bar" style="background:#10b981"></div><div class="sc-body"><span class="sc-dept" style="background:#d1fae5;color:#065f46">🧠 臨床心理士</span><div class="sc-name">松本 学</div><div class="sc-org">東北大学病院</div></div></div>
     </div>
   </div>
 </section>
