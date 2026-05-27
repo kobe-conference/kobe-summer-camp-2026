@@ -869,7 +869,8 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
 <div id="actModal" class="modal-ov" onclick="if(event.target===this)closeM('actModal')">
   <div class="modal-box">
     <button class="modal-close" onclick="closeM('actModal')">✕</button>
-    <div class="modal-img-ph"><span class="mip-icon">📷</span><span class="mip-t">ここに写真が入ります</span><span class="mip-s">実際のアクティビティ写真を掲載予定</span></div>
+    <img class="modal-img" id="amImg" src="" alt="" style="display:none">
+    <div class="modal-img-ph" id="amImgPh" style="display:none"><span class="mip-icon">📷</span><span class="mip-t">ここに写真が入ります</span><span class="mip-s">実際のアクティビティ写真を掲載予定</span></div>
     <div class="modal-body">
       <span id="amTag" class="m-tag"></span>
       <h3 id="amTitle"></h3>
@@ -956,13 +957,13 @@ function switchDept(id){
 
 // Activity data
 const ACT={
-  campfire:{tag:'🧒 お子様向け',tagColor:'#ec4899',title:'🏕 キャンプファイヤー',desc:'1日目の夜（19:30〜）、夜の六甲山に大きな炎が燃え上がるキャンプのクライマックス！みんなで輪になって楽しみます。同じ仲間たちと過ごすこの夜は、一生の思い出になるはずです。'},
-  hamigaki:{tag:'🧒 お子様向け',tagColor:'#ec4899',title:'🦷 歯磨き指導',desc:'1日目の夜、キャンプファイヤーと並行して実施。担当：小島 將督先生・中島 健吾先生（矯正歯科）による丁寧な歯磨き指導です。口唇口蓋裂のお子さんは歯並びが複雑なことも多く、正しいブラッシングが特に大切。楽しみながら正しいケアを学べます。'},
-  athletic:{tag:'🧒 お子様向け',tagColor:'#ec4899',title:'🏃 アスレチック体験（屋外）',desc:'2日目の午前（9:00〜）、六甲山の豊かな自然の中に設置されたアスレチックコースに挑戦！ロープを登ったり、丸太を渡ったり、体を思いっきり動かして楽しみます。自然の中での冒険は子どもたちの心を育てます。'},
-  suika:{tag:'🧒 お子様向け',tagColor:'#ec4899',title:'🍉 スイカ割り',desc:'2日目の午前（9:00〜）、夏の定番スイカ割り！目隠しをして、みんなの声を頼りにスイカめがけて棒を振ります。成功したら割れたスイカをみんなで食べる、夏らしいひとときです。'},
-  consul:{tag:'👨‍👩‍👧 保護者様向け',tagColor:'#0ea5e9',title:'💬 専門医 個別相談会',desc:'2日目の勉強会Part2終了後、各専門家による個別相談会を実施。形成外科・矯正歯科・言語聴覚士など各専門家と直接お話できます。「次の手術はいつ頃？」「言葉の発達が気になる」「矯正のタイミングは？」など、日頃聞けない疑問をこの機会にぜひ。'},
-  study:{tag:'👨‍👩‍👧 保護者様向け',tagColor:'#0ea5e9',title:'📚 口蓋裂治療勉強会',desc:'保護者向け講演会を2回実施。【Part1（1日目19:30〜）】講師：山本一郎先生・上田晃一先生ほか。【Part2（2日目9:00〜）】講師：益岡弘先生・木村得尚先生・岩城忍先生（ST）。治療の各ステージをわかりやすく解説。講演後は個別に質問も受け付けます。'},
-  party:{tag:'👨‍👩‍👧 保護者様向け',tagColor:'#0ea5e9',title:'🍻 懇親会',desc:'1日目の夜21時から。専門医の先生方と保護者の方が一緒に語り合えます。各方面の専門医がおりますので、ざっくばらんにお話しください。「同じ立場の保護者とつながれた」という声が毎年多数。横のつながりが生まれる大切な時間です。'},
+  campfire:{tag:'🧒 お子様向け',tagColor:'#ec4899',title:'🏕 キャンプファイヤー',desc:'1日目の夜（19:30〜）、夜の六甲山に大きな炎が燃え上がるキャンプのクライマックス！みんなで輪になって楽しみます。同じ仲間たちと過ごすこの夜は、一生の思い出になるはずです。',photo:'25_0823.01_22_43_19.静止画043.jpg'},
+  hamigaki:{tag:'🧒 お子様向け',tagColor:'#ec4899',title:'🦷 歯磨き指導',desc:'1日目の夜、キャンプファイヤーと並行して実施。担当：片岡和哉先生・小島将督先生による丁寧な歯磨き指導です。口唇口蓋裂のお子さんは歯並びが複雑なことも多く、正しいブラッシングが特に大切。楽しみながら正しいケアを学べます。',photo:'25_0823.01_27_05_15.静止画047 (1).jpg'},
+  athletic:{tag:'🧒 お子様向け',tagColor:'#ec4899',title:'🏃 アスレチック体験（屋外）',desc:'2日目の午前（9:00〜）、六甲山の豊かな自然の中に設置されたアスレチックコースに挑戦！ロープを登ったり、丸太を渡ったり、体を思いっきり動かして楽しみます。自然の中での冒険は子どもたちの心を育てます。',photo:'25_0824.00_24_05_12.静止画017.jpg'},
+  suika:{tag:'🧒 お子様向け',tagColor:'#ec4899',title:'🍉 スイカ割り',desc:'2日目の午前（9:00〜）、夏の定番スイカ割り！目隠しをして、みんなの声を頼りにスイカめがけて棒を振ります。成功したら割れたスイカをみんなで食べる、夏らしいひとときです。',photo:'25_0824.01_06_43_20.静止画029.jpg'},
+  consul:{tag:'👨‍👩‍👧 保護者様向け',tagColor:'#0ea5e9',title:'💬 専門医 個別相談会',desc:'2日目の勉強会Part2終了後、各専門家による個別相談会を実施。形成外科・矯正歯科・言語聴覚士など各専門家と直接お話できます。「次の手術はいつ頃？」「言葉の発達が気になる」「矯正のタイミングは？」など、日頃聞けない疑問をこの機会にぜひ。',photo:'25_0824.00_47_52_07.静止画024.jpg'},
+  study:{tag:'👨‍👩‍👧 保護者様向け',tagColor:'#0ea5e9',title:'📚 口蓋裂治療勉強会',desc:'保護者向け講演会を2回実施。【Part1（1日目19:30〜）】講師：山本一郎先生・上田晃一先生・松本学先生ほか。【Part2（2日目9:00〜）】講師：益岡弘先生・木村得尚先生・岩城忍先生（ST）。治療の各ステージをわかりやすく解説。講演後は個別に質問も受け付けます。',photo:'25_0824.00_18_17_01.静止画011.jpg'},
+  party:{tag:'👨‍👩‍👧 保護者様向け',tagColor:'#0ea5e9',title:'🍻 懇親会',desc:'1日目の夜21時から。専門医の先生方と保護者の方が一緒に語り合えます。各方面の専門医がおりますので、ざっくばらんにお話しください。「同じ立場の保護者とつながれた」という声が毎年多数。横のつながりが生まれる大切な時間です。',photo:'25_0823.02_34_16_22.静止画072.jpg'},
 }
 
 function openAct(k){
@@ -971,6 +972,9 @@ function openAct(k){
   document.getElementById('amTag').style.cssText=`background:${d.tagColor};color:#fff`
   document.getElementById('amTitle').textContent=d.title
   document.getElementById('amDesc').textContent=d.desc
+  const img=document.getElementById('amImg'),ph=document.getElementById('amImgPh')
+  if(d.photo){img.src=d.photo;img.alt=d.title;img.style.display='';ph.style.display='none'}
+  else{img.style.display='none';ph.style.display=''}
   document.getElementById('actModal').classList.add('open')
   document.body.style.overflow='hidden'
 }
