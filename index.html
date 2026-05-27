@@ -149,6 +149,15 @@ section,.sect{padding:72px 20px}
 .act-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 16px 48px rgba(0,0,0,.2)}
 .act-card.big{grid-column:span 2;aspect-ratio:2/1}
 @media(max-width:640px){.act-card.big{grid-column:span 2;aspect-ratio:16/9}}
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.gal-item{position:relative;border-radius:16px;overflow:hidden;cursor:zoom-in;aspect-ratio:4/3;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s}
+.gal-item:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 12px 32px rgba(0,0,0,.2)}
+.gal-item.big{grid-column:span 2;aspect-ratio:16/9}
+.gal-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gal-item:hover img{transform:scale(1.06)}
+.gal-cap{position:absolute;bottom:0;left:0;right:0;padding:10px 14px;background:linear-gradient(to top,rgba(0,0,0,.75),transparent);color:#fff;font-size:.78rem;font-weight:700}
+@media(max-width:640px){.gallery-grid{grid-template-columns:1fr 1fr}.gal-item.big{grid-column:span 2}}
 .ac-photo{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .4s}
 .act-card:hover .ac-photo{transform:scale(1.06)}
 .ac-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.75) 0%,rgba(0,0,0,.1) 60%)}
@@ -894,6 +903,33 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
   </div>
 </section>
 
+<!-- GALLERY -->
+<div class="wave"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" height="48"><path d="M0,0 C360,48 1080,0 1440,48 L1440,0 L0,0Z" fill="#f8fafc"/></svg></div>
+<section id="gallery" style="background:#f8fafc;padding:72px 20px">
+  <div class="container">
+    <div class="s-title reveal"><h2>キャンプの<span>思い出</span></h2></div>
+    <p class="s-lead">毎年たくさんの笑顔と感動が生まれています。過去のキャンプの様子をご覧ください。</p>
+    <div class="gallery-grid reveal" id="gallery-grid">
+      <div class="gal-item big" onclick="openGal(this)"><img src="25_0823.01_22_43_19.静止画043.jpg" alt="キャンプファイヤー" loading="lazy"><div class="gal-cap">🏕 キャンプファイヤー</div></div>
+      <div class="gal-item" onclick="openGal(this)"><img src="25_0824.01_06_43_20.静止画029.jpg" alt="スイカ割り" loading="lazy"><div class="gal-cap">🍉 スイカ割り</div></div>
+      <div class="gal-item" onclick="openGal(this)"><img src="25_0824.00_24_05_12.静止画017.jpg" alt="アスレチック" loading="lazy"><div class="gal-cap">🏃 アスレチック</div></div>
+      <div class="gal-item" onclick="openGal(this)"><img src="25_0824.00_47_52_07.静止画024.jpg" alt="個別相談会" loading="lazy"><div class="gal-cap">💬 個別相談会</div></div>
+      <div class="gal-item" onclick="openGal(this)"><img src="25_0823.02_34_16_22.静止画072.jpg" alt="懇親会" loading="lazy"><div class="gal-cap">🍻 懇親会</div></div>
+      <div class="gal-item big" onclick="openGal(this)"><img src="25_0824.00_44_37_20.静止画023.jpg" alt="専門医と家族の交流" loading="lazy"><div class="gal-cap">👨‍👩‍👧 専門医と家族の交流</div></div>
+      <div class="gal-item" onclick="openGal(this)"><img src="25_0823.01_27_05_15.静止画047 (1).jpg" alt="焚き火を囲む子どもたち" loading="lazy"><div class="gal-cap">🔥 焚き火を囲む子どもたち</div></div>
+      <div class="gal-item" onclick="openGal(this)"><img src="25_0824.00_18_17_01.静止画011.jpg" alt="治療勉強会" loading="lazy"><div class="gal-cap">📚 治療勉強会</div></div>
+      <div class="gal-item" onclick="openGal(this)"><img src="25_0823.00_26_30_15.静止画028.jpg" alt="開会式" loading="lazy"><div class="gal-cap">🎉 開会式</div></div>
+    </div>
+  </div>
+</section>
+<div id="galModal" class="modal-ov" onclick="closeM('galModal')" style="cursor:zoom-out">
+  <div style="max-width:860px;width:100%;position:relative">
+    <button class="modal-close" onclick="closeM('galModal')" style="position:absolute;top:-14px;right:-14px;z-index:2">✕</button>
+    <img id="galImg" src="" alt="" style="width:100%;border-radius:16px;display:block;max-height:80vh;object-fit:contain">
+    <div id="galCaption" style="color:#fff;text-align:center;margin-top:10px;font-weight:700;font-size:1rem"></div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer>
   <svg class="footer-tree" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,80 L60,40 L120,80 L160,20 L200,80 L280,0 L360,80 L440,30 L520,80 L620,10 L720,80 L820,20 L920,80 L1020,35 L1120,80 L1220,15 L1320,80 L1380,45 L1440,80 L1440,120 L0,120Z" fill="#10b981"/></svg>
@@ -1036,7 +1072,18 @@ function closeM(id){
   document.getElementById(id).classList.remove('open')
   document.body.style.overflow=''
 }
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeM('actModal');closeM('staffModal');closeM('checklistModal');document.getElementById('chat-window').classList.remove('open')}})
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeM('actModal');closeM('staffModal');closeM('checklistModal');closeM('galModal');document.getElementById('chat-window').classList.remove('open')}})
+
+// ── GALLERY ──
+function openGal(el){
+  const img=el.querySelector('img')
+  const cap=el.querySelector('.gal-cap')
+  document.getElementById('galImg').src=img.src
+  document.getElementById('galImg').alt=img.alt
+  document.getElementById('galCaption').textContent=cap?cap.textContent:''
+  document.getElementById('galModal').classList.add('open')
+  document.body.style.overflow='hidden'
+})
 
 // Reveal on scroll
 const obs=new IntersectionObserver(entries=>{
