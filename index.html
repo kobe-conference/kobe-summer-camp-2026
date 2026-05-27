@@ -548,15 +548,33 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
 <div class="wave"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" height="48"><path d="M0,0 C360,48 1080,0 1440,48 L1440,0 L0,0Z" fill="#065f46"/></svg></div>
 
 <!-- CF BANNER -->
+<!-- CF_URL: クラウドファンディングのURLが決まったら下の CF_URL の値を書き換えてください -->
+<script>const CF_URL=''/* ← ここにURLを貼る（例: 'https://camp-fire.jp/projects/xxxxx' ）*/</script>
 <div id="cf">
   <div class="container">
     <div class="cf-box reveal">
       <div style="font-size:2.4rem">🙌</div>
       <h3>今年もクラウドファンディングを実施します！</h3>
-      <p>参加費のご負担を少しでも軽くするために、今回もクラウドファンディングを実施予定です。<br>皆様のお力添えをぜひよろしくお願いします。詳細は随時お知らせします。</p>
+      <p>参加費のご負担を少しでも軽くするために、今回もクラウドファンディングを実施予定です。<br>皆様のお力添えをぜひよろしくお願いします。</p>
+      <div id="cf-btn-wrap" style="margin-top:16px;display:none">
+        <a id="cf-link" href="#" target="_blank" rel="noopener" class="btn-primary" style="background:#fff;color:#d97706;border:2px solid #fff">🔗 クラウドファンディングページへ</a>
+      </div>
+      <p id="cf-soon" style="margin-top:12px;font-size:.85rem;opacity:.8">▶ 詳細は随時このページでお知らせします。</p>
     </div>
   </div>
 </div>
+<script>
+(function(){
+  if(CF_URL){
+    var a=document.getElementById('cf-link');
+    if(a)a.href=CF_URL;
+    var btn=document.getElementById('cf-btn-wrap');
+    if(btn)btn.style.display='';
+    var soon=document.getElementById('cf-soon');
+    if(soon)soon.style.display='none';
+  }
+})();
+</script>
 <div class="wave"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" height="48"><path d="M0,0 C360,48 1080,0 1440,48 L1440,0 L0,0Z" fill="#fbbf24"/></svg></div>
 
 <!-- TESTIMONIALS -->
