@@ -59,22 +59,20 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 
 /* ── HERO ── */
 #hero{height:100vh;min-height:620px;position:relative;display:flex;align-items:flex-start;justify-content:center;overflow:hidden;background:#f5d9c0}
-.hero-bg{position:absolute;inset:0;background:url('IMG_4305.png') center bottom/cover no-repeat;transform:scale(1.05);transition:transform 8s ease}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(245,217,192,.55) 0%,rgba(245,217,192,.1) 35%,transparent 65%)}
+.hero-bg{position:absolute;inset:0;background:url('IMG_4305.png') center center/cover no-repeat}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(245,217,192,.25) 0%,rgba(245,217,192,.08) 40%,transparent 70%)}
 
-/* 太陽 */
-.hero-sun{position:absolute;top:7%;right:10%;width:clamp(70px,10vw,110px);height:clamp(70px,10vw,110px);background:radial-gradient(circle,#ffe066 40%,#ffcc00 70%,rgba(255,200,0,0) 100%);border-radius:50%;box-shadow:0 0 40px 16px rgba(255,220,0,.35),0 0 80px 30px rgba(255,200,0,.15);animation:sunPulse 4s ease-in-out infinite;z-index:1}
-@keyframes sunPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.9}}
+/* 太陽・雲はイラスト内に描かれているため非表示 */
+.hero-sun{display:none}
 
 /* 山のSVGランドスケープ */
-.hero-mt{position:absolute;bottom:0;left:0;right:0;z-index:1;line-height:0}
-.hero-mt svg{display:block;width:100%}
+.hero-mt{display:none}
 
 /* 三角旗バンティング */
 .pennant-row{position:absolute;top:0;left:0;right:0;z-index:4;line-height:0;pointer-events:none}
 .pennant-row svg{display:block;width:100%}
 
-.hero-body{position:relative;z-index:3;text-align:center;padding:100px 20px 0;max-width:820px}
+.hero-body{position:relative;z-index:3;text-align:center;padding:80px 20px 0;max-width:820px}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2.5px solid var(--green-mid);color:var(--green-d);border-radius:30px;padding:7px 22px;font-size:.88rem;font-weight:900;margin-bottom:20px;letter-spacing:.06em;box-shadow:0 4px 16px rgba(22,163,74,.2)}
 .hero-badge span{background:var(--orange);color:#fff;border-radius:20px;padding:3px 13px;font-size:.8rem}
 .hero-h1{font-size:clamp(2.6rem,7.5vw,5rem);font-weight:900;color:var(--green-d);line-height:1.05;letter-spacing:.02em;text-shadow:0 3px 0 rgba(255,255,255,.7),0 6px 20px rgba(0,0,0,.08);margin-bottom:10px}
@@ -90,15 +88,8 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 .btn-outline:hover{background:rgba(255,255,255,.95);transform:translateY(-2px)}
 .hero-scroll{position:absolute;bottom:60px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--green-d);font-size:.75rem;font-weight:700;animation:bounce2 2s infinite}
 @keyframes bounce2{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
-/* 雲 */
-.hero-cloud{position:absolute;background:#fff;border-radius:50px;opacity:.82;animation:cloudDrift 18s ease-in-out infinite;z-index:1}
-.hero-cloud::before,.hero-cloud::after{content:'';position:absolute;background:#fff;border-radius:50%}
-.hero-cloud-l{width:140px;height:44px;top:18%;left:6%;animation-duration:20s}
-.hero-cloud-l::before{width:72px;height:64px;top:-30px;left:18px}
-.hero-cloud-l::after{width:54px;height:50px;top:-20px;left:60px}
-.hero-cloud-r{width:110px;height:36px;top:22%;right:22%;animation-duration:26s;animation-delay:-8s}
-.hero-cloud-r::before{width:56px;height:52px;top:-24px;left:14px}
-.hero-cloud-r::after{width:44px;height:40px;top:-16px;left:50px}
+/* 雲（イラスト内に空があるため非表示） */
+.hero-cloud{display:none}
 @keyframes cloudDrift{0%,100%{transform:translateX(0)}50%{transform:translateX(18px)}}
 .hero-photo-note{display:none}
 @media(max-width:640px){.hero-scroll{bottom:80px}.hero-sun{top:5%;right:5%;width:60px;height:60px}.hero-cloud-l{width:90px;height:28px;top:14%}.hero-cloud-r{display:none}}
