@@ -27,11 +27,12 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Event","name":"第27回 神戸カンファレンス サマーキャンプ","description":"口唇口蓋裂のお子さんと家族のための宿泊型キャンプ。専門医相談と体験アクティビティを同時開催。","startDate":"2026-08-01","endDate":"2026-08-02","location":{"@type":"Place","name":"神戸市立自然の家 六甲施設","address":{"@type":"PostalAddress","streetAddress":"六甲山町中一里山1-1","addressLocality":"神戸市灘区","addressRegion":"兵庫県","addressCountry":"JP"}}}</script>
 <style>
 :root{
-  --green:#10b981;--green-d:#065f46;--green-l:#d1fae5;
-  --orange:#f97316;--amber:#fbbf24;--sky:#0ea5e9;
+  --green:#22c55e;--green-d:#14532d;--green-l:#dcfce7;--green-mid:#16a34a;
+  --orange:#f97316;--amber:#fbbf24;--sky:#38bdf8;--sky-bg:#bde9f7;
   --pink:#ec4899;--purple:#8b5cf6;
-  --dark:#0f172a;--gray:#64748b;--light:#f8fafc;--cream:#fffbeb;
-  --r:16px;--shadow:0 4px 24px rgba(0,0,0,.10);
+  --dark:#0f172a;--gray:#64748b;--light:#f0fdf4;--cream:#fffbeb;
+  --r:18px;--shadow:0 4px 24px rgba(0,0,0,.10);
+  --mt1:#a8d5a0;--mt2:#4caf72;--mt3:#1e7c3a;--mt4:#0f4a22;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 img{max-width:100%;height:auto}
@@ -57,26 +58,49 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 @media(max-width:640px){.hdr-nav{display:none}}
 
 /* ── HERO ── */
-#hero{height:100vh;min-height:600px;position:relative;display:flex;align-items:flex-start;justify-content:center;overflow:hidden;background:#fde8d0}
-.hero-bg{position:absolute;inset:0;background:url('IMG_4305.png') center bottom/cover no-repeat;transform:scale(1.05);transition:transform 8s ease}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(253,216,178,.93) 0%,rgba(253,216,178,.65) 42%,rgba(253,216,178,.05) 72%,transparent 100%)}
-.hero-body{position:relative;z-index:2;text-align:center;padding:96px 20px 0;max-width:780px}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.85);border:1.5px solid rgba(16,185,129,.45);backdrop-filter:blur(8px);color:var(--green-d);border-radius:30px;padding:6px 20px;font-size:.85rem;font-weight:700;margin-bottom:22px;letter-spacing:.06em}
-.hero-badge span{background:var(--orange);color:#fff;border-radius:20px;padding:2px 12px;font-size:.78rem}
-.hero-h1{font-size:clamp(2.4rem,7vw,4.4rem);font-weight:900;color:var(--green-d);line-height:1.1;letter-spacing:.03em;text-shadow:0 2px 12px rgba(255,255,255,.7);margin-bottom:10px}
-.hero-h1 em{color:var(--orange);font-style:normal}
-.hero-catch{font-size:clamp(1.1rem,3.5vw,1.8rem);font-weight:800;color:#374151;letter-spacing:.06em;margin-bottom:6px;text-shadow:0 1px 8px rgba(255,255,255,.8)}
+#hero{height:100vh;min-height:620px;position:relative;display:flex;align-items:flex-start;justify-content:center;overflow:hidden;background:linear-gradient(180deg,#bde9f7 0%,#d6f0fb 35%,#caf0d8 65%,#7ec98a 100%)}
+.hero-bg{display:none}/* 写真背景は使わずイラスト風に */
+
+/* 太陽 */
+.hero-sun{position:absolute;top:7%;right:10%;width:clamp(70px,10vw,110px);height:clamp(70px,10vw,110px);background:radial-gradient(circle,#ffe066 40%,#ffcc00 70%,rgba(255,200,0,0) 100%);border-radius:50%;box-shadow:0 0 40px 16px rgba(255,220,0,.35),0 0 80px 30px rgba(255,200,0,.15);animation:sunPulse 4s ease-in-out infinite;z-index:1}
+@keyframes sunPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.08);opacity:.9}}
+
+/* 山のSVGランドスケープ */
+.hero-mt{position:absolute;bottom:0;left:0;right:0;z-index:1;line-height:0}
+.hero-mt svg{display:block;width:100%}
+
+/* 三角旗バンティング */
+.pennant-row{position:absolute;top:0;left:0;right:0;z-index:4;line-height:0;pointer-events:none}
+.pennant-row svg{display:block;width:100%}
+
+.hero-body{position:relative;z-index:3;text-align:center;padding:100px 20px 0;max-width:820px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2.5px solid var(--green-mid);color:var(--green-d);border-radius:30px;padding:7px 22px;font-size:.88rem;font-weight:900;margin-bottom:20px;letter-spacing:.06em;box-shadow:0 4px 16px rgba(22,163,74,.2)}
+.hero-badge span{background:var(--orange);color:#fff;border-radius:20px;padding:3px 13px;font-size:.8rem}
+.hero-h1{font-size:clamp(2.6rem,7.5vw,5rem);font-weight:900;color:var(--green-d);line-height:1.05;letter-spacing:.02em;text-shadow:0 3px 0 rgba(255,255,255,.8),0 6px 20px rgba(0,0,0,.08);margin-bottom:10px}
+.hero-h1 em{color:var(--orange);font-style:normal;text-shadow:0 3px 0 rgba(255,255,255,.7),0 6px 20px rgba(249,115,22,.2)}
+.hero-catch{font-size:clamp(1.05rem,3vw,1.65rem);font-weight:800;color:var(--green-d);letter-spacing:.05em;margin-bottom:6px;background:rgba(255,255,255,.55);display:inline-block;padding:4px 18px;border-radius:20px}
 .hero-catch em{color:var(--orange);font-style:normal}
-.hero-date{margin:16px 0 28px;font-size:clamp(1rem,3vw,1.35rem);color:#374151;font-weight:700;letter-spacing:.08em}
+.hero-date{margin:16px 0 26px;font-size:clamp(.95rem,2.8vw,1.25rem);color:var(--green-d);font-weight:800;letter-spacing:.06em;text-shadow:0 1px 6px rgba(255,255,255,.6)}
 .hero-date b{color:var(--orange)}
 .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn-primary{background:var(--orange);color:#fff;padding:14px 36px;border-radius:50px;font-weight:900;font-size:1rem;text-decoration:none;box-shadow:0 6px 24px rgba(249,115,22,.5);transition:all .25s;display:inline-flex;align-items:center;gap:8px}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(249,115,22,.6)}
-.btn-outline{background:rgba(255,255,255,.65);border:2px solid var(--green);color:var(--green-d);padding:14px 32px;border-radius:50px;font-weight:700;font-size:.95rem;text-decoration:none;backdrop-filter:blur(4px);transition:all .25s}
-.btn-outline:hover{background:rgba(255,255,255,.9)}
-.hero-scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--green-d);font-size:.75rem;font-weight:700;animation:bounce2 2s infinite}
+.btn-primary{background:linear-gradient(135deg,#ff8c42,var(--orange));color:#fff;padding:15px 38px;border-radius:50px;font-weight:900;font-size:1rem;text-decoration:none;box-shadow:0 6px 24px rgba(249,115,22,.45),0 2px 0 rgba(0,0,0,.1);transition:all .25s;display:inline-flex;align-items:center;gap:8px;border:none}
+.btn-primary:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 12px 36px rgba(249,115,22,.55)}
+.btn-outline{background:rgba(255,255,255,.75);border:2.5px solid var(--green-mid);color:var(--green-d);padding:14px 32px;border-radius:50px;font-weight:800;font-size:.95rem;text-decoration:none;backdrop-filter:blur(6px);transition:all .25s}
+.btn-outline:hover{background:rgba(255,255,255,.95);transform:translateY(-2px)}
+.hero-scroll{position:absolute;bottom:200px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--green-d);font-size:.75rem;font-weight:700;animation:bounce2 2s infinite}
 @keyframes bounce2{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+/* 雲 */
+.hero-cloud{position:absolute;background:#fff;border-radius:50px;opacity:.82;animation:cloudDrift 18s ease-in-out infinite;z-index:1}
+.hero-cloud::before,.hero-cloud::after{content:'';position:absolute;background:#fff;border-radius:50%}
+.hero-cloud-l{width:140px;height:44px;top:18%;left:6%;animation-duration:20s}
+.hero-cloud-l::before{width:72px;height:64px;top:-30px;left:18px}
+.hero-cloud-l::after{width:54px;height:50px;top:-20px;left:60px}
+.hero-cloud-r{width:110px;height:36px;top:22%;right:22%;animation-duration:26s;animation-delay:-8s}
+.hero-cloud-r::before{width:56px;height:52px;top:-24px;left:14px}
+.hero-cloud-r::after{width:44px;height:40px;top:-16px;left:50px}
+@keyframes cloudDrift{0%,100%{transform:translateX(0)}50%{transform:translateX(18px)}}
 .hero-photo-note{display:none}
+@media(max-width:640px){.hero-scroll{bottom:230px}.hero-sun{top:5%;right:5%;width:60px;height:60px}.hero-cloud-l{width:90px;height:28px;top:14%}.hero-cloud-r{display:none}}
 
 /* ── WAVE ── */
 .wave{line-height:0;overflow:hidden}
@@ -95,10 +119,12 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 /* ── SECTION BASE ── */
 section,.sect{padding:72px 20px}
 .container{max-width:960px;margin:0 auto}
-.s-title{text-align:center;margin-bottom:12px}
-.s-title h2{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;color:var(--green-d)}
+.s-title{text-align:center;margin-bottom:12px;position:relative}
+.s-title h2{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;color:var(--green-d);display:inline-block;position:relative;padding:0 36px}
+.s-title h2::before,.s-title h2::after{content:'🌿';position:absolute;top:50%;transform:translateY(-50%);font-size:1.1rem;opacity:.8}
+.s-title h2::before{left:0}.s-title h2::after{right:0}
 .s-title h2 span{color:var(--orange)}
-.s-title::after{content:'';display:block;width:48px;height:5px;background:linear-gradient(90deg,var(--green),var(--amber));border-radius:3px;margin:12px auto 0}
+.s-title::after{content:'';display:block;width:64px;height:5px;background:linear-gradient(90deg,var(--green),var(--amber),var(--orange));border-radius:3px;margin:12px auto 0}
 .s-lead{text-align:center;color:var(--gray);font-size:.95rem;margin:16px 0 36px}
 
 /* ── ABOUT ── */
@@ -453,12 +479,57 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg"></div>
-  <!-- floating deco -->
-  <div class="deco" style="position:absolute;top:15%;left:8%;font-size:2.5rem">🍃</div>
-  <div class="deco" style="position:absolute;top:25%;right:10%;font-size:2rem">⭐</div>
-  <div class="deco" style="position:absolute;top:60%;left:5%;font-size:1.8rem">🌿</div>
+  <!-- 太陽 -->
+  <div class="hero-sun" aria-hidden="true"></div>
 
+  <!-- 雲 -->
+  <div class="hero-cloud hero-cloud-l" aria-hidden="true"></div>
+  <div class="hero-cloud hero-cloud-r" aria-hidden="true"></div>
+
+  <!-- バンティング旗 -->
+  <div class="pennant-row" aria-hidden="true">
+    <svg viewBox="0 0 1440 70" preserveAspectRatio="none" height="70">
+      <!-- ロープ -->
+      <path d="M0,12 Q180,36 360,12 Q540,36 720,12 Q900,36 1080,12 Q1260,36 1440,12" stroke="#c8a45a" stroke-width="2.5" fill="none" opacity=".8"/>
+      <!-- 三角旗 各色 -->
+      <polygon points="60,12 80,12 70,48"  fill="#ff6b6b" opacity=".92"/>
+      <polygon points="100,12 120,12 110,48" fill="#fbbf24" opacity=".92"/>
+      <polygon points="140,24 160,24 150,58" fill="#22c55e" opacity=".92"/>
+      <polygon points="180,16 200,16 190,52" fill="#38bdf8" opacity=".92"/>
+      <polygon points="220,12 240,12 230,48" fill="#f97316" opacity=".92"/>
+      <polygon points="260,22 280,22 270,56" fill="#ec4899" opacity=".92"/>
+      <polygon points="300,14 320,14 310,50" fill="#8b5cf6" opacity=".92"/>
+      <polygon points="340,24 360,24 350,58" fill="#ff6b6b" opacity=".92"/>
+      <polygon points="380,12 400,12 390,48" fill="#fbbf24" opacity=".92"/>
+      <polygon points="420,20 440,20 430,54" fill="#22c55e" opacity=".92"/>
+      <polygon points="460,14 480,14 470,50" fill="#38bdf8" opacity=".92"/>
+      <polygon points="500,24 520,24 510,58" fill="#f97316" opacity=".92"/>
+      <polygon points="540,12 560,12 550,48" fill="#ec4899" opacity=".92"/>
+      <polygon points="580,20 600,20 590,54" fill="#8b5cf6" opacity=".92"/>
+      <polygon points="620,14 640,14 630,50" fill="#ff6b6b" opacity=".92"/>
+      <polygon points="660,24 680,24 670,58" fill="#fbbf24" opacity=".92"/>
+      <polygon points="700,12 720,12 710,48" fill="#22c55e" opacity=".92"/>
+      <polygon points="740,20 760,20 750,54" fill="#38bdf8" opacity=".92"/>
+      <polygon points="780,12 800,12 790,48" fill="#f97316" opacity=".92"/>
+      <polygon points="820,22 840,22 830,56" fill="#ec4899" opacity=".92"/>
+      <polygon points="860,14 880,14 870,50" fill="#8b5cf6" opacity=".92"/>
+      <polygon points="900,24 920,24 910,58" fill="#ff6b6b" opacity=".92"/>
+      <polygon points="940,12 960,12 950,48" fill="#fbbf24" opacity=".92"/>
+      <polygon points="980,20 1000,20 990,54" fill="#22c55e" opacity=".92"/>
+      <polygon points="1020,14 1040,14 1030,50" fill="#38bdf8" opacity=".92"/>
+      <polygon points="1060,24 1080,24 1070,58" fill="#f97316" opacity=".92"/>
+      <polygon points="1100,12 1120,12 1110,48" fill="#ec4899" opacity=".92"/>
+      <polygon points="1140,20 1160,20 1150,54" fill="#8b5cf6" opacity=".92"/>
+      <polygon points="1180,14 1200,14 1190,50" fill="#ff6b6b" opacity=".92"/>
+      <polygon points="1220,24 1240,24 1230,58" fill="#fbbf24" opacity=".92"/>
+      <polygon points="1260,12 1280,12 1270,48" fill="#22c55e" opacity=".92"/>
+      <polygon points="1300,20 1320,20 1310,54" fill="#38bdf8" opacity=".92"/>
+      <polygon points="1340,14 1360,14 1350,50" fill="#f97316" opacity=".92"/>
+      <polygon points="1380,24 1400,24 1390,58" fill="#ec4899" opacity=".92"/>
+    </svg>
+  </div>
+
+  <!-- メインコンテンツ -->
   <div class="hero-body">
     <div class="hero-badge"><span>第27回</span>神戸カンファレンス</div>
     <h1 class="hero-h1">サマー<em>キャンプ</em></h1>
@@ -483,6 +554,51 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
       <a href="#apply" class="btn-primary">📋 参加申し込みはこちら</a>
       <a href="#about" class="btn-outline">詳しく見る ↓</a>
     </div>
+  </div>
+
+  <!-- 山のSVGランドスケープ -->
+  <div class="hero-mt" aria-hidden="true">
+    <svg viewBox="0 0 1440 240" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- 奥の山（淡い） -->
+      <path d="M0,180 L120,80 L240,150 L360,50 L480,120 L600,70 L720,130 L840,55 L960,110 L1080,60 L1200,130 L1320,75 L1440,120 L1440,240 L0,240Z" fill="#a8d5a0" opacity=".7"/>
+      <!-- 中間の山 -->
+      <path d="M0,200 L100,130 L200,180 L320,100 L440,160 L540,110 L660,170 L760,90 L880,155 L980,115 L1100,165 L1200,105 L1320,155 L1440,130 L1440,240 L0,240Z" fill="#4caf72"/>
+      <!-- 手前の山 -->
+      <path d="M0,220 L80,175 L160,210 L260,160 L380,205 L480,170 L580,215 L680,165 L800,210 L900,180 L1020,215 L1120,175 L1240,210 L1340,180 L1440,200 L1440,240 L0,240Z" fill="#1e7c3a"/>
+      <!-- 木のシルエット（左） -->
+      <g fill="#0f4a22">
+        <polygon points="55,170 65,145 75,170"/>
+        <rect x="63" y="170" width="4" height="12"/>
+        <polygon points="75,165 87,138 99,165"/>
+        <rect x="85" y="165" width="4" height="14"/>
+        <polygon points="30,178 40,158 50,178"/>
+        <rect x="38" y="178" width="4" height="10"/>
+      </g>
+      <!-- 木のシルエット（中） -->
+      <g fill="#0f4a22">
+        <polygon points="690,158 702,128 714,158"/>
+        <rect x="700" y="158" width="4" height="16"/>
+        <polygon points="718,162 728,140 738,162"/>
+        <rect x="726" y="162" width="4" height="12"/>
+      </g>
+      <!-- 木のシルエット（右） -->
+      <g fill="#0f4a22">
+        <polygon points="1350,172 1362,145 1374,172"/>
+        <rect x="1360" y="172" width="4" height="14"/>
+        <polygon points="1375,168 1385,148 1395,168"/>
+        <rect x="1383" y="168" width="4" height="12"/>
+        <polygon points="1395,175 1403,158 1411,175"/>
+        <rect x="1401" y="175" width="4" height="10"/>
+      </g>
+      <!-- テント（左手前） -->
+      <polygon points="130,230 155,205 180,230" fill="#ff6b6b" opacity=".85"/>
+      <line x1="155" y1="205" x2="155" y2="232" stroke="#c0392b" stroke-width="1.5"/>
+      <!-- テント（右手前） -->
+      <polygon points="1250,228 1278,200 1306,228" fill="#fbbf24" opacity=".85"/>
+      <line x1="1278" y1="200" x2="1278" y2="230" stroke="#d97706" stroke-width="1.5"/>
+      <!-- 地面（最前） -->
+      <rect x="0" y="235" width="1440" height="5" fill="#0f4a22"/>
+    </svg>
   </div>
 
   <div class="hero-scroll">
