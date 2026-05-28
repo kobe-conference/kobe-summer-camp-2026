@@ -58,11 +58,11 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 @media(max-width:640px){.hdr-nav{display:none}}
 
 /* ── HERO ── */
-#hero{height:100vh;min-height:600px;position:relative;overflow:hidden}
-/* center 25%：山の顔が画面中央上寄りにくっきり見える */
-.hero-bg{position:absolute;inset:0;background:url('IMG_4305.png') center 25%/cover no-repeat}
-/* グラデーションは下40%だけ → 山の顔エリアはクリア */
-#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to bottom,transparent 0%,rgba(245,213,181,.5) 30%,rgba(245,213,181,.9) 65%,rgba(245,213,181,.97) 100%);pointer-events:none;z-index:2}
+#hero{height:100vh;min-height:600px;position:relative;overflow:hidden;background-color:#f5d5b5}
+/* auto 100% = 高さを画面いっぱいに合わせる → 上（山）から下（家族3人）まで全員見える */
+.hero-bg{position:absolute;inset:0;background:url('IMG_4305.png') center top/auto 100% no-repeat}
+/* テキスト直上だけ薄くグラデーション（家族は見えたまま） */
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:28%;background:linear-gradient(to bottom,transparent 0%,rgba(245,213,181,.55) 45%,rgba(245,213,181,.92) 85%,rgba(245,213,181,.97) 100%);pointer-events:none;z-index:2}
 .hero-sun{display:none}.hero-mt{display:none}.hero-cloud{display:none}
 /* バンティング旗 */
 .pennant-row{position:absolute;top:0;left:0;right:0;z-index:5;line-height:0;pointer-events:none}
