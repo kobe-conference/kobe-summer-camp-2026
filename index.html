@@ -58,9 +58,10 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 @media(max-width:640px){.hdr-nav{display:none}}
 
 /* ── HERO ── */
-#hero{height:100vh;min-height:620px;position:relative;display:flex;align-items:flex-start;justify-content:center;overflow:hidden;background:#f5d9c0}
-.hero-bg{position:absolute;inset:0;background:url('IMG_4305.png') center center/cover no-repeat}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,.18) 0%,transparent 40%)}
+#hero{height:100vh;min-height:620px;position:relative;display:flex;align-items:flex-start;justify-content:center;overflow:hidden;background:#f5d5b5}
+/* イラストは下半分だけに表示 → テキストと山の顔が重ならない */
+.hero-bg{position:absolute;left:0;right:0;bottom:0;height:62%;background:url('IMG_4305.png') center top/cover no-repeat}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(245,213,181,.85) 0%,rgba(245,213,181,.1) 40%,transparent 100%)}
 
 /* 太陽・山はイラスト内に描かれているため非表示 */
 .hero-sun{display:none}
@@ -70,14 +71,14 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 .pennant-row{position:absolute;top:0;left:0;right:0;z-index:4;line-height:0;pointer-events:none}
 .pennant-row svg{display:block;width:100%}
 
-.hero-body{position:relative;z-index:3;text-align:center;padding:80px 20px 0;max-width:820px}
+.hero-body{position:relative;z-index:3;text-align:center;padding:90px 20px 0;max-width:820px}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2.5px solid var(--green-mid);color:var(--green-d);border-radius:30px;padding:7px 22px;font-size:.88rem;font-weight:900;margin-bottom:20px;letter-spacing:.06em;box-shadow:0 4px 16px rgba(22,163,74,.2)}
 .hero-badge span{background:var(--orange);color:#fff;border-radius:20px;padding:3px 13px;font-size:.8rem}
-.hero-h1{font-size:clamp(2.6rem,7.5vw,5rem);font-weight:900;color:var(--green-d);line-height:1.05;letter-spacing:.02em;text-shadow:0 3px 0 rgba(255,255,255,.7),0 6px 20px rgba(0,0,0,.08);margin-bottom:10px}
-.hero-h1 em{color:var(--orange);font-style:normal;text-shadow:0 3px 0 rgba(255,255,255,.6),0 6px 20px rgba(249,115,22,.3)}
-.hero-catch{font-size:clamp(1.05rem,3vw,1.65rem);font-weight:800;color:var(--green-d);letter-spacing:.05em;margin-bottom:6px;background:rgba(255,255,255,.65);display:inline-block;padding:4px 18px;border-radius:20px;backdrop-filter:blur(4px)}
+.hero-h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:900;color:var(--green-d);line-height:1.05;letter-spacing:.02em;text-shadow:0 2px 0 rgba(255,255,255,.9),0 4px 16px rgba(0,0,0,.06);margin-bottom:8px}
+.hero-h1 em{color:var(--orange);font-style:normal}
+.hero-catch{font-size:clamp(1rem,2.8vw,1.5rem);font-weight:800;color:var(--green-d);letter-spacing:.05em;margin-bottom:4px;background:rgba(255,255,255,.7);display:inline-block;padding:4px 18px;border-radius:20px}
 .hero-catch em{color:var(--orange);font-style:normal}
-.hero-date{margin:16px 0 26px;font-size:clamp(.95rem,2.8vw,1.25rem);color:var(--green-d);font-weight:800;letter-spacing:.06em;text-shadow:0 1px 6px rgba(255,255,255,.7)}
+.hero-date{margin:12px 0 20px;font-size:clamp(.9rem,2.5vw,1.15rem);color:var(--green-d);font-weight:800;letter-spacing:.05em}
 .hero-date b{color:var(--orange)}
 .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .btn-primary{background:linear-gradient(135deg,#ff8c42,var(--orange));color:#fff;padding:15px 38px;border-radius:50px;font-weight:900;font-size:1rem;text-decoration:none;box-shadow:0 6px 24px rgba(249,115,22,.45),0 2px 0 rgba(0,0,0,.1);transition:all .25s;display:inline-flex;align-items:center;gap:8px;border:none}
