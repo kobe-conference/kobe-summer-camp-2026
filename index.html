@@ -59,10 +59,10 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 
 /* ── HERO ── */
 #hero{height:100vh;min-height:600px;position:relative;overflow:hidden;background-color:#f5d5b5}
-/* auto 100% = 高さを画面いっぱいに合わせる → 上（山）から下（家族3人）まで全員見える */
-.hero-bg{position:absolute;inset:0;background:url('IMG_4305.png') center top/auto 100% no-repeat}
-/* テキスト直上だけ薄くグラデーション（家族は見えたまま） */
-#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:28%;background:linear-gradient(to bottom,transparent 0%,rgba(245,213,181,.55) 45%,rgba(245,213,181,.92) 85%,rgba(245,213,181,.97) 100%);pointer-events:none;z-index:2}
+/* cover + bottom固定 → 画面いっぱい＆家族3人が下部にしっかり見える */
+.hero-bg{position:absolute;inset:0;background:url('IMG_4305.png') center bottom/cover no-repeat}
+/* テキスト直上だけ薄くグラデーション */
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:30%;background:linear-gradient(to bottom,transparent 0%,rgba(245,213,181,.5) 40%,rgba(245,213,181,.88) 75%,rgba(245,213,181,.95) 100%);pointer-events:none;z-index:2}
 .hero-sun{display:none}.hero-mt{display:none}.hero-cloud{display:none}
 /* バンティング旗 */
 .pennant-row{position:absolute;top:0;left:0;right:0;z-index:5;line-height:0;pointer-events:none}
