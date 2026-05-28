@@ -59,9 +59,10 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 
 /* ── HERO ── */
 #hero{height:100vh;min-height:600px;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('IMG_4305.png') center top/cover no-repeat}
-/* 下部グラデーション：山の顔より下のエリアを読みやすく */
-#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:52%;background:linear-gradient(to bottom,transparent 0%,rgba(245,213,181,.6) 35%,rgba(245,213,181,.93) 70%,rgba(245,213,181,.98) 100%);pointer-events:none;z-index:2}
+/* center 25%：山の顔が画面中央上寄りにくっきり見える */
+.hero-bg{position:absolute;inset:0;background:url('IMG_4305.png') center 25%/cover no-repeat}
+/* グラデーションは下40%だけ → 山の顔エリアはクリア */
+#hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to bottom,transparent 0%,rgba(245,213,181,.5) 30%,rgba(245,213,181,.9) 65%,rgba(245,213,181,.97) 100%);pointer-events:none;z-index:2}
 .hero-sun{display:none}.hero-mt{display:none}.hero-cloud{display:none}
 /* バンティング旗 */
 .pennant-row{position:absolute;top:0;left:0;right:0;z-index:5;line-height:0;pointer-events:none}
@@ -95,18 +96,22 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 @media(max-width:640px){.hero-h1{font-size:clamp(2.2rem,10vw,3rem)}.hero-body{padding:0 16px 24px}}
 
 /* ── COUNTDOWN STRIP ── */
-#cd-strip{background:var(--green-d);padding:18px 20px}
-.cd-strip-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
-.cd-strip-label{color:rgba(255,255,255,.85);font-size:.88rem;font-weight:800;letter-spacing:.04em;white-space:nowrap}
-#cd-strip .countdown-units{display:flex;align-items:center;gap:6px}
-#cd-strip .cd-unit{text-align:center}
-#cd-strip .cd-num{font-size:1.6rem;font-weight:900;color:#fff;line-height:1;min-width:36px}
-#cd-strip .cd-name{font-size:.62rem;color:rgba(255,255,255,.65);font-weight:700;letter-spacing:.06em}
-#cd-strip .cd-sep{font-size:1.4rem;font-weight:900;color:rgba(255,255,255,.5);line-height:1;padding-bottom:14px}
-.cd-strip-btn{background:var(--orange);color:#fff;padding:10px 24px;border-radius:30px;font-weight:900;font-size:.88rem;text-decoration:none;white-space:nowrap;transition:all .2s}
-.cd-strip-btn:hover{background:#ea6200;transform:translateY(-1px)}
-#cd-strip .cd-unit .cd-num{display:block}
-@media(max-width:600px){.cd-strip-label{width:100%;text-align:center}.cd-strip-inner{gap:16px}}
+#cd-strip{background:linear-gradient(135deg,#1a3d1a 0%,#2d6a2d 100%);padding:20px 20px;border-bottom:3px solid var(--amber)}
+.cd-strip-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap}
+.cd-strip-label{color:#fff;font-size:1rem;font-weight:900;letter-spacing:.06em;white-space:nowrap;text-shadow:0 1px 4px rgba(0,0,0,.3)}
+#cd-strip .countdown-units{display:flex;align-items:flex-end;gap:4px}
+#cd-strip .cd-unit{text-align:center;background:rgba(255,255,255,.12);border-radius:10px;padding:6px 12px;min-width:56px}
+#cd-strip .cd-num{font-size:2.2rem;font-weight:900;color:#fff;line-height:1;display:block;letter-spacing:.02em}
+#cd-strip .cd-name{font-size:.68rem;color:rgba(255,255,255,.75);font-weight:800;letter-spacing:.1em;display:block;margin-top:2px}
+#cd-strip .cd-sep{font-size:1.8rem;font-weight:900;color:var(--amber);line-height:1;padding-bottom:18px;margin:0 2px}
+.cd-strip-btn{background:linear-gradient(135deg,#ff8c42,var(--orange));color:#fff;padding:12px 28px;border-radius:30px;font-weight:900;font-size:.95rem;text-decoration:none;white-space:nowrap;transition:all .2s;box-shadow:0 4px 16px rgba(249,115,22,.4)}
+.cd-strip-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(249,115,22,.5)}
+@media(max-width:640px){
+  .cd-strip-label{width:100%;text-align:center}
+  .cd-strip-inner{gap:14px}
+  #cd-strip .cd-unit{min-width:46px;padding:5px 8px}
+  #cd-strip .cd-num{font-size:1.8rem}
+}
 
 /* ── WAVE ── */
 .wave{line-height:0;overflow:hidden}
