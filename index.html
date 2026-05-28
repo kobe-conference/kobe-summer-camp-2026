@@ -27,12 +27,12 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Event","name":"第27回 神戸カンファレンス サマーキャンプ","description":"口唇口蓋裂のお子さんと家族のための宿泊型キャンプ。専門医相談と体験アクティビティを同時開催。","startDate":"2026-08-01","endDate":"2026-08-02","location":{"@type":"Place","name":"神戸市立自然の家 六甲施設","address":{"@type":"PostalAddress","streetAddress":"六甲山町中一里山1-1","addressLocality":"神戸市灘区","addressRegion":"兵庫県","addressCountry":"JP"}}}</script>
 <style>
 :root{
-  --green:#22c55e;--green-d:#14532d;--green-l:#dcfce7;--green-mid:#16a34a;
-  --orange:#f97316;--amber:#fbbf24;--sky:#38bdf8;--sky-bg:#bde9f7;
+  --green:#5cb85c;--green-d:#2d6a2d;--green-l:#e8f5e8;--green-mid:#3d9142;
+  --orange:#f97316;--amber:#f5c518;--sky:#4db8e8;--sky-bg:#d6f0fb;
   --pink:#ec4899;--purple:#8b5cf6;
-  --dark:#0f172a;--gray:#64748b;--light:#f0fdf4;--cream:#fffbeb;
+  --dark:#1a2e1a;--gray:#5a6e5a;--light:#f0fdf0;--cream:#fffde7;
   --r:18px;--shadow:0 4px 24px rgba(0,0,0,.10);
-  --mt1:#a8d5a0;--mt2:#4caf72;--mt3:#1e7c3a;--mt4:#0f4a22;
+  --mt1:#a8d5a0;--mt2:#5cb85c;--mt3:#2d6a2d;--mt4:#1a3d1a;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 img{max-width:100%;height:auto}
@@ -60,12 +60,10 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 /* ── HERO ── */
 #hero{height:100vh;min-height:620px;position:relative;display:flex;align-items:flex-start;justify-content:center;overflow:hidden;background:#f5d9c0}
 .hero-bg{position:absolute;inset:0;background:url('IMG_4305.png') center center/cover no-repeat}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(245,217,192,.25) 0%,rgba(245,217,192,.08) 40%,transparent 70%)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(255,255,255,.18) 0%,transparent 40%)}
 
-/* 太陽・雲はイラスト内に描かれているため非表示 */
+/* 太陽・山はイラスト内に描かれているため非表示 */
 .hero-sun{display:none}
-
-/* 山のSVGランドスケープ */
 .hero-mt{display:none}
 
 /* 三角旗バンティング */
@@ -471,12 +469,8 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
 
 <!-- HERO -->
 <section id="hero">
-  <!-- 太陽 -->
-  <div class="hero-sun" aria-hidden="true"></div>
-
-  <!-- 雲 -->
-  <div class="hero-cloud hero-cloud-l" aria-hidden="true"></div>
-  <div class="hero-cloud hero-cloud-r" aria-hidden="true"></div>
+  <!-- 背景写真 -->
+  <div class="hero-bg"></div>
 
   <!-- バンティング旗 -->
   <div class="pennant-row" aria-hidden="true">
