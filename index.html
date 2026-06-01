@@ -59,10 +59,10 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 
 /* ── HERO（チラシ風：左テキスト・右イラスト）── */
 #hero{height:100vh;min-height:600px;position:relative;display:flex;align-items:center;overflow:hidden;background:#fde8d0}
-/* 写真を全画面cover（最初のスタイル） */
-.hero-bg{position:absolute;inset:0;background:url('IMG_4305.png') center bottom/cover no-repeat}
+/* PC：イラストを右側に引いて表示（チラシ風） */
+.hero-bg{position:absolute;right:0;top:0;bottom:0;width:65%;background:url('IMG_4305.png') right bottom/auto 100% no-repeat}
 /* 左へのグラデーション → 左エリアを文字スペースとして確保 */
-#hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(253,232,208,.95) 28%,rgba(253,232,208,.82) 44%,rgba(253,232,208,.2) 65%,transparent 100%);pointer-events:none;z-index:2}
+#hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,#fde8d0 30%,rgba(253,232,208,.9) 47%,rgba(253,232,208,.25) 68%,transparent 100%);pointer-events:none;z-index:2}
 .hero-sun{display:none}.hero-mt{display:none}.hero-cloud{display:none}
 .pennant-row{display:none}
 /* テキストエリア：左寄せ */
