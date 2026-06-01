@@ -1116,9 +1116,14 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
 <!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-// ページ開いたとき常にトップへ
+// ページ開いたとき常にトップへ（スマホ対応）
 if('scrollRestoration' in history){history.scrollRestoration='manual'}
+document.documentElement.style.scrollBehavior='auto'
 window.scrollTo(0,0)
+window.addEventListener('load',function(){
+  window.scrollTo(0,0)
+  setTimeout(function(){document.documentElement.style.scrollBehavior=''},100)
+})
 
 // Header scroll
 window.addEventListener('scroll',()=>{
