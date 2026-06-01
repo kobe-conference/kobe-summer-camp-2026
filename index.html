@@ -103,25 +103,11 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 @keyframes cloudDrift{0%,100%{transform:translateX(0)}50%{transform:translateX(16px)}}
 .hero-photo-note{display:none}
 .hero-body .countdown-wrap{display:none}
-/* スマホ：太陽の上半分をCSSで補完（元画像で切れている部分） */
-.hero-sun-top{display:none}
 @media(max-width:700px){
   #hero{align-items:flex-start}
   .hero-bg{position:absolute;inset:0;width:100%;background:url('IMG_4305.png') center bottom/100% auto no-repeat}
   #hero::after{background:linear-gradient(to bottom,rgba(250,216,190,.95) 18%,rgba(250,216,190,.82) 38%,rgba(250,216,190,.08) 62%,transparent 100%)}
   .hero-body{width:100%;padding:60px 24px 0;text-align:center}
-  /* 太陽の上半分：画像上端 = hero下から70vw、x=右1cm・下0.5cm補正済み */
-  .hero-sun-top{
-    display:block;
-    position:absolute;
-    left:calc(83.4% + 5.1vw);
-    bottom:70vw;
-    width:9.8vw;
-    height:4.9vw;
-    background:#fec64d;
-    border-radius:50% 50% 0 0 / 100% 100% 0 0;
-    z-index:3;
-  }
   .hero-h1{font-size:clamp(2rem,9vw,2.8rem)}
   .hero-btns{justify-content:center;flex-direction:column;gap:10px}
   .btn-primary,.btn-outline{width:100%;justify-content:center}
@@ -524,9 +510,6 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
-  <!-- スマホ用：太陽の上半分補完 -->
-  <div class="hero-sun-top" aria-hidden="true"></div>
-
   <!-- バンティング旗（最前面） -->
   <div class="pennant-row" aria-hidden="true">
     <svg viewBox="0 0 1440 70" preserveAspectRatio="none" height="70">
