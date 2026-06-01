@@ -105,7 +105,7 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 .hero-body .countdown-wrap{display:none}
 @media(max-width:700px){
   #hero{align-items:flex-start}
-  .hero-bg{position:absolute;inset:0;width:100%;background:url('IMG_4305.png') center 40%/cover no-repeat}
+  .hero-bg{position:absolute;inset:0;width:100%;background:url('IMG_4305.png') center bottom/contain no-repeat}
   #hero::after{background:linear-gradient(to bottom,rgba(253,232,208,.95) 18%,rgba(253,232,208,.82) 38%,rgba(253,232,208,.1) 62%,transparent 100%)}
   .hero-body{width:100%;padding:60px 24px 0;text-align:center}
   .hero-h1{font-size:clamp(2rem,9vw,2.8rem)}
@@ -1118,6 +1118,10 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
 <!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
+// ページ開いたとき常にトップへ
+if('scrollRestoration' in history){history.scrollRestoration='manual'}
+window.scrollTo(0,0)
+
 // Header scroll
 window.addEventListener('scroll',()=>{
   document.getElementById('hdr').classList.toggle('scrolled',scrollY>60)
