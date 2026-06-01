@@ -89,13 +89,13 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--green-l);border:none;color:var(--green-d);border-radius:30px;padding:5px 16px;font-size:.78rem;font-weight:900;margin-bottom:14px;letter-spacing:.08em;box-shadow:none}
 .hero-badge span{background:var(--orange);color:#fff;border-radius:20px;padding:2px 11px;font-size:.75rem}
 /* タイトル */
-.hero-h1{font-size:clamp(2.4rem,8vw,3.8rem);font-weight:900;color:var(--green-d);line-height:1.0;letter-spacing:.03em;margin-bottom:8px;text-shadow:none}
+.hero-h1{font-size:clamp(2.4rem,8vw,3.8rem);font-weight:900;color:var(--green-d);line-height:1.0;letter-spacing:.03em;margin-bottom:8px;text-shadow:0 2px 16px rgba(255,255,255,.95),0 1px 4px rgba(255,255,255,.9)}
 .hero-h1 em{color:var(--orange);font-style:normal}
 /* キャッチ */
-.hero-catch{font-size:clamp(.92rem,2.5vw,1.1rem);font-weight:800;color:#374151;letter-spacing:.06em;margin-bottom:6px;background:none;display:block;padding:0;border-radius:0}
+.hero-catch{font-size:clamp(.92rem,2.5vw,1.1rem);font-weight:800;color:#374151;letter-spacing:.06em;margin-bottom:6px;background:none;display:block;padding:0;border-radius:0;text-shadow:0 1px 8px rgba(255,255,255,.9)}
 .hero-catch em{color:var(--orange);font-style:normal}
 /* 日付 */
-.hero-date{margin:0 0 20px;font-size:clamp(.8rem,1.8vw,.92rem);color:#6b7280;font-weight:700;letter-spacing:.04em;line-height:1.8}
+.hero-date{margin:0 0 16px;font-size:clamp(.8rem,1.8vw,.92rem);color:#374151;font-weight:700;letter-spacing:.04em;line-height:1.8;text-shadow:0 1px 6px rgba(255,255,255,.85)}
 .hero-date b{color:var(--orange)}
 /* ボタン */
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
@@ -107,7 +107,11 @@ body{font-family:'M PLUS Rounded 1c',sans-serif;color:var(--dark);background:#ff
 @keyframes bounce2{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
 @keyframes cloudDrift{0%,100%{transform:translateX(0)}50%{transform:translateX(16px)}}
 .hero-photo-note{display:none}
-.hero-body .countdown-wrap{display:none}
+.hero-body .countdown-wrap{display:flex;background:rgba(255,255,255,.20);border-radius:16px;padding:12px 16px;margin:0 0 20px}
+.hero-body .cd-unit{background:rgba(255,255,255,.35);border:1.5px solid rgba(255,255,255,.6);min-width:52px;padding:8px 10px}
+.hero-body .cd-num{font-size:1.8rem;color:var(--green-d)}
+.hero-body .cd-sep{color:var(--orange)}
+.hero-body .cd-label{color:var(--green-d);text-shadow:none}
 @media(max-width:640px){
   .hero-body{bottom:20px;padding:20px 20px 24px;border-radius:20px}
   .hero-h1{font-size:clamp(2rem,9vw,2.8rem)}
@@ -563,6 +567,18 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
       <b>2026年 8月1日(土) → 8月2日(日)</b><br>
       神戸市立 自然の家 六甲施設
     </div>
+    <div class="countdown-wrap">
+      <div class="cd-label">🏕 イベント開幕まで</div>
+      <div class="countdown-units">
+        <div class="cd-unit"><div class="cd-num" id="cd-days">---</div><div class="cd-name">日</div></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><div class="cd-num" id="cd-hours">--</div><div class="cd-name">時間</div></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><div class="cd-num" id="cd-mins">--</div><div class="cd-name">分</div></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><div class="cd-num" id="cd-secs">--</div><div class="cd-name">秒</div></div>
+      </div>
+    </div>
     <div class="hero-btns">
       <a href="#apply" class="btn-primary">📋 参加申し込みはこちら</a>
       <a href="#about" class="btn-outline">詳しく見る ↓</a>
@@ -575,13 +591,13 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
   <div class="cd-strip-inner">
     <span class="cd-strip-label">🏕 イベント開幕まで</span>
     <div class="countdown-units">
-      <div class="cd-unit"><div class="cd-num" id="cd-days">---</div><div class="cd-name">日</div></div>
+      <div class="cd-unit"><div class="cd-num">---</div><div class="cd-name">日</div></div>
       <div class="cd-sep">:</div>
-      <div class="cd-unit"><div class="cd-num" id="cd-hours">--</div><div class="cd-name">時間</div></div>
+      <div class="cd-unit"><div class="cd-num">--</div><div class="cd-name">時間</div></div>
       <div class="cd-sep">:</div>
-      <div class="cd-unit"><div class="cd-num" id="cd-mins">--</div><div class="cd-name">分</div></div>
+      <div class="cd-unit"><div class="cd-num">--</div><div class="cd-name">分</div></div>
       <div class="cd-sep">:</div>
-      <div class="cd-unit"><div class="cd-num" id="cd-secs">--</div><div class="cd-name">秒</div></div>
+      <div class="cd-unit"><div class="cd-num">--</div><div class="cd-name">秒</div></div>
     </div>
     <a href="#apply" class="cd-strip-btn">申し込む <span id="dl-badge"></span></a>
   </div>
