@@ -484,6 +484,25 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
 .reveal-l.on{opacity:1;transform:none}
 .reveal-r{opacity:0;transform:translateX(28px);transition:opacity .6s ease,transform .6s ease}
 .reveal-r.on{opacity:1;transform:none}
+
+/* ── SPEAKERS ── */
+#speakers{background:linear-gradient(160deg,#f0fdf4 0%,#fffde7 100%);padding:72px 0}
+.spk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-top:8px}
+.spk-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);transition:all .25s;border:1.5px solid #e8f5e8;display:flex;flex-direction:column}
+.spk-card:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(0,0,0,.13)}
+.spk-photo{width:100%;height:200px;object-fit:cover;object-position:top center}
+.spk-photo-placeholder{width:100%;height:200px;background:linear-gradient(135deg,#d1fae5,#bbf7d0);display:flex;align-items:center;justify-content:center;font-size:4rem}
+.spk-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:6px}
+.spk-day{display:inline-block;font-size:.68rem;font-weight:900;padding:2px 12px;border-radius:20px;background:#fef3c7;color:#92400e;letter-spacing:.04em}
+.spk-day.d2{background:#dbeafe;color:#1d4ed8}
+.spk-dept{font-size:.72rem;font-weight:700;color:var(--gray)}
+.spk-name{font-size:1.12rem;font-weight:900;color:var(--dark)}
+.spk-org{font-size:.75rem;color:var(--gray);line-height:1.6}
+.spk-divider{border:none;border-top:1px solid #f0f4f0;margin:6px 0}
+.spk-talk-label{font-size:.65rem;font-weight:900;color:var(--green-d);letter-spacing:.06em}
+.spk-talk{font-size:.83rem;font-weight:800;color:var(--orange);line-height:1.55;border-left:3px solid var(--orange);padding-left:10px}
+.spk-day-head{font-size:.9rem;font-weight:900;color:var(--green-d);letter-spacing:.08em;margin:28px 0 12px;padding-left:4px;border-left:5px solid var(--amber);padding-left:14px}
+@media(max-width:600px){.spk-grid{grid-template-columns:1fr 1fr;gap:14px}.spk-photo,.spk-photo-placeholder{height:150px}.spk-name{font-size:.97rem}.spk-org{font-size:.7rem}}
 </style>
 </head>
 <body>
@@ -501,6 +520,7 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
     <a href="#about">概要</a>
     <a href="#program">プログラム</a>
     <a href="#activities">体験</a>
+    <a href="#speakers">講師</a>
     <a href="#staff">専門医</a>
     <a href="#fees">参加費</a>
     <a href="#contact" class="hdr-cta">申し込む</a>
@@ -813,6 +833,123 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
   </div>
 </section>
 <div class="wave"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" height="48"><path d="M0,0 C360,48 1080,0 1440,48 L1440,0 L0,0Z" fill="#f8fafc"/></svg></div>
+
+<!-- SPEAKERS -->
+<section id="speakers">
+  <div class="container">
+    <div class="s-title reveal"><h2>勉強会<span>講師紹介</span></h2></div>
+    <p class="s-lead">今年の保護者向け勉強会にお話しいただく先生方をご紹介します。</p>
+
+    <div class="spk-day-head">📅 8月1日（土）— 勉強会 Part 1</div>
+    <div class="spk-grid reveal">
+
+      <div class="spk-card">
+        <img class="spk-photo" src="speaker-kimura.jpg" alt="木村得尚先生" loading="lazy">
+        <div class="spk-body">
+          <span class="spk-day">8/1 Part 1</span>
+          <div class="spk-dept">🏥 形成外科</div>
+          <div class="spk-name">木村 得尚 先生</div>
+          <div class="spk-org">広島市民病院 形成外科</div>
+          <hr class="spk-divider">
+          <div class="spk-talk-label">講演タイトル</div>
+          <div class="spk-talk">仕上げとしての鼻修正術</div>
+        </div>
+      </div>
+
+      <div class="spk-card">
+        <img class="spk-photo" src="speaker-masuoka.jpg" alt="益岡弘先生" loading="lazy">
+        <div class="spk-body">
+          <span class="spk-day">8/1 Part 1</span>
+          <div class="spk-dept">🏥 形成外科</div>
+          <div class="spk-name">益岡 弘 先生</div>
+          <div class="spk-org">関西医科大学 形成外科</div>
+        </div>
+      </div>
+
+      <div class="spk-card">
+        <img class="spk-photo" src="speaker-ueda-y.jpg" alt="上田優輔先生" loading="lazy">
+        <div class="spk-body">
+          <span class="spk-day">8/1 Part 1</span>
+          <div class="spk-dept">🩺 産婦人科・臨床遺伝専門医</div>
+          <div class="spk-name">上田 優輔 先生</div>
+          <div class="spk-org">京都大学病院 産婦人科<br>特定病院助教</div>
+          <hr class="spk-divider">
+          <div class="spk-talk-label">講演タイトル</div>
+          <div class="spk-talk">口唇口蓋裂とともに生きる ― 当事者医師から親子へのメッセージ</div>
+        </div>
+      </div>
+
+      <div class="spk-card">
+        <img class="spk-photo" src="speaker-matsumoto.jpg" alt="松本学先生" loading="lazy">
+        <div class="spk-body">
+          <span class="spk-day">8/1 Part 1</span>
+          <div class="spk-dept">🧠 公認心理師</div>
+          <div class="spk-name">松本 学 先生</div>
+          <div class="spk-org">東北大学病院 形成外科</div>
+          <hr class="spk-divider">
+          <div class="spk-talk-label">講演タイトル</div>
+          <div class="spk-talk">みんなで支える、子どもの新生活と集団適応のヒント</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="spk-day-head">📅 8月2日（日）— 勉強会 Part 2</div>
+    <div class="spk-grid reveal">
+
+      <div class="spk-card">
+        <img class="spk-photo" src="speaker-iwaki.jpg" alt="岩城忍先生" loading="lazy">
+        <div class="spk-body">
+          <span class="spk-day d2">8/2 Part 2</span>
+          <div class="spk-dept">🗣 言語聴覚士</div>
+          <div class="spk-name">岩城 忍 先生</div>
+          <div class="spk-org">神戸大学医学部附属病院<br>耳鼻咽喉科</div>
+          <hr class="spk-divider">
+          <div class="spk-talk-label">講演タイトル</div>
+          <div class="spk-talk">口唇口蓋裂を持つ子どもの発音と治療</div>
+        </div>
+      </div>
+
+      <div class="spk-card">
+        <img class="spk-photo" src="speaker-ueda-k.jpg" alt="上田晃一先生" loading="lazy">
+        <div class="spk-body">
+          <span class="spk-day d2">8/2 Part 2</span>
+          <div class="spk-dept">🏥 形成外科</div>
+          <div class="spk-name">上田 晃一 先生</div>
+          <div class="spk-org">大阪府済生会吹田病院 形成外科<br>大阪医科薬科大学 名誉教授</div>
+          <hr class="spk-divider">
+          <div class="spk-talk-label">講演タイトル</div>
+          <div class="spk-talk">口唇と鼻における成長に応じた追加手術</div>
+        </div>
+      </div>
+
+      <div class="spk-card">
+        <img class="spk-photo" src="speaker-yamamoto.jpg" alt="山本一郎先生" loading="lazy">
+        <div class="spk-body">
+          <span class="spk-day d2">8/2 Part 2</span>
+          <div class="spk-dept">🦷 歯科医師（矯正歯科）</div>
+          <div class="spk-name">山本 一郎 先生</div>
+          <div class="spk-org">山本歯科医院 矯正歯科クリニック</div>
+          <hr class="spk-divider">
+          <div class="spk-talk-label">講演タイトル</div>
+          <div class="spk-talk">歯科矯正と言葉の治療に使う装置について</div>
+        </div>
+      </div>
+
+      <div class="spk-card">
+        <div class="spk-photo-placeholder">👩‍⚕️</div>
+        <div class="spk-body">
+          <span class="spk-day d2">8/2 Part 2</span>
+          <div class="spk-dept">🏥 形成外科</div>
+          <div class="spk-name">福井 充香 先生</div>
+          <div class="spk-org">関西医科大学 形成外科学講座</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="wave"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" height="48"><path d="M0,48 C360,0 1080,48 1440,0 L1440,48 L0,48Z" fill="#f8fafc"/></svg></div>
 
 <!-- STAFF -->
 <section id="staff">
