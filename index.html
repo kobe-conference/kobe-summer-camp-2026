@@ -488,7 +488,8 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
 /* ── SPEAKERS ── */
 #speakers{background:linear-gradient(160deg,#f0fdf4 0%,#fffde7 100%);padding:72px 0}
 .spk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px;margin-top:8px}
-.spk-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);transition:all .25s;border:1.5px solid #e8f5e8;display:flex;flex-direction:column}
+.spk-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);transition:all .25s;border:1.5px solid #e8f5e8;display:flex;flex-direction:column;cursor:pointer}
+.spk-hint{font-size:.7rem;color:var(--green-d);margin-top:auto;padding-top:10px;opacity:.65;text-align:right}
 .spk-card:hover{transform:translateY(-6px);box-shadow:0 14px 36px rgba(0,0,0,.13)}
 .spk-photo{width:100%;height:220px;object-fit:cover;object-position:center 15%}
 .spk-photo-placeholder{width:100%;height:200px;background:linear-gradient(135deg,#d1fae5,#bbf7d0);display:flex;align-items:center;justify-content:center;font-size:4rem}
@@ -762,8 +763,8 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
       <div class="tl-item show"><div class="tl-dot"></div><div class="tl-time">午後 2:30</div><div class="tl-body"><strong><span class="tl-badge tb-all">全員</span>集会・受付開始</strong></div></div>
       <div class="tl-item show"><div class="tl-dot"></div><div class="tl-time">午後 4:00</div><div class="tl-body"><strong><span class="tl-badge tb-all">全員</span>開会式</strong></div></div>
       <div class="tl-item show"><div class="tl-dot"></div><div class="tl-time">午後 6:00</div><div class="tl-body"><strong><span class="tl-badge tb-all">全員</span>夕食</strong></div></div>
-      <div class="tl-item show"><div class="tl-dot orange"></div><div class="tl-time">午後 7:30</div><div class="tl-body"><strong><span class="tl-badge tb-child">お子様</span>キャンプファイヤー / 歯磨き指導</strong><p>担当：片岡 和哉先生、小島 将督先生<br>夜の六甲山で大きな炎を囲んで！</p></div></div>
-      <div class="tl-item show"><div class="tl-dot sky"></div><div class="tl-time">午後 7:30</div><div class="tl-body"><strong><span class="tl-badge tb-parent">保護者様</span>勉強会 Part 1</strong><p>講師：木村尚得先生、益岡弘先生、松本学先生　患者代表：上田優輔先生<br>＊講演後、時間の許す限り個別に質問を受け付けます。各方面の専門医がおります。ざっくばらんにお話しください。</p></div></div>
+      <div class="tl-item show"><div class="tl-dot orange"></div><div class="tl-time">午後 7:30</div><div class="tl-body"><strong><span class="tl-badge tb-child">お子様</span>キャンプファイヤー / 歯磨き指導</strong><p>担当：中島 健吾先生、小島 将督先生<br>夜の六甲山で大きな炎を囲んで！</p></div></div>
+      <div class="tl-item show"><div class="tl-dot sky"></div><div class="tl-time">午後 7:30</div><div class="tl-body"><strong><span class="tl-badge tb-parent">保護者様</span>勉強会 Part 1</strong><p>講師：木村得尚先生、益岡弘先生、松本学先生　患者代表：上田優輔先生<br>＊講演後、時間の許す限り個別に質問を受け付けます。各方面の専門医がおります。ざっくばらんにお話しください。</p></div></div>
       <div class="tl-item show"><div class="tl-dot"></div><div class="tl-time">午後 9:00</div><div class="tl-body"><strong><span class="tl-badge tb-all">全員</span>懇親会</strong></div></div>
     </div>
     <div class="timeline reveal" id="day2" style="display:none">
@@ -843,7 +844,7 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
     <div class="spk-day-head">📅 8月1日（土）— 勉強会 Part 1</div>
     <div class="spk-grid reveal">
 
-      <div class="spk-card">
+      <div class="spk-card" onclick="openSpk('kimura')">
         <img class="spk-photo" src="speaker-kimura.jpg?v=3" alt="木村得尚先生" loading="lazy">
         <div class="spk-body">
           <span class="spk-day">8/1 Part 1</span>
@@ -853,21 +854,23 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
           <hr class="spk-divider">
           <div class="spk-talk-label">講演タイトル</div>
           <div class="spk-talk">仕上げとしての鼻修正術</div>
+          <div class="spk-hint">🔍 抄録を読む</div>
         </div>
       </div>
 
-      <div class="spk-card">
+      <div class="spk-card" onclick="openSpk('masuoka')">
         <img class="spk-photo" src="speaker-masuoka.jpg?v=3" alt="益岡弘先生" loading="lazy">
         <div class="spk-body">
           <span class="spk-day">8/1 Part 1</span>
           <div class="spk-dept">🏥 形成外科</div>
           <div class="spk-name">益岡 弘 先生</div>
-          <div class="spk-org">関西医科大学 形成外科</div>
+          <div class="spk-org">関西医科大学形成外科学講座</div>
+          <div class="spk-hint">🔍 詳細を見る</div>
         </div>
       </div>
 
-      <div class="spk-card">
-        <img class="spk-photo" src="speaker-ueda-y.jpg?v=3" alt="上田優輔先生" loading="lazy">
+      <div class="spk-card" onclick="openSpk('ueda_y')">
+        <img class="spk-photo" src="speaker-ueda-y.jpg?v=4" alt="上田優輔先生" loading="lazy">
         <div class="spk-body">
           <span class="spk-day">8/1 Part 1</span>
           <div class="spk-dept">🩺 産婦人科・臨床遺伝専門医</div>
@@ -876,10 +879,11 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
           <hr class="spk-divider">
           <div class="spk-talk-label">講演タイトル</div>
           <div class="spk-talk">口唇口蓋裂とともに生きる ― 当事者医師から親子へのメッセージ</div>
+          <div class="spk-hint">🔍 抄録を読む</div>
         </div>
       </div>
 
-      <div class="spk-card">
+      <div class="spk-card" onclick="openSpk('matsumoto')">
         <img class="spk-photo" src="speaker-matsumoto.jpg?v=3" alt="松本学先生" loading="lazy">
         <div class="spk-body">
           <span class="spk-day">8/1 Part 1</span>
@@ -889,6 +893,7 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
           <hr class="spk-divider">
           <div class="spk-talk-label">講演タイトル</div>
           <div class="spk-talk">みんなで支える、子どもの新生活と集団適応のヒント</div>
+          <div class="spk-hint">🔍 抄録を読む</div>
         </div>
       </div>
 
@@ -897,7 +902,7 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
     <div class="spk-day-head">📅 8月2日（日）— 勉強会 Part 2</div>
     <div class="spk-grid reveal">
 
-      <div class="spk-card">
+      <div class="spk-card" onclick="openSpk('iwaki')">
         <img class="spk-photo" src="speaker-iwaki.jpg?v=5" alt="岩城忍先生" loading="lazy">
         <div class="spk-body">
           <span class="spk-day d2">8/2 Part 2</span>
@@ -907,11 +912,12 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
           <hr class="spk-divider">
           <div class="spk-talk-label">講演タイトル</div>
           <div class="spk-talk">口唇口蓋裂を持つ子どもの発音と治療</div>
+          <div class="spk-hint">🔍 抄録を読む</div>
         </div>
       </div>
 
-      <div class="spk-card">
-        <img class="spk-photo" src="speaker-ueda-k.jpg?v=3" alt="上田晃一先生" loading="lazy">
+      <div class="spk-card" onclick="openSpk('ueda_k')">
+        <img class="spk-photo" src="speaker-ueda-k.jpg?v=4" alt="上田晃一先生" loading="lazy">
         <div class="spk-body">
           <span class="spk-day d2">8/2 Part 2</span>
           <div class="spk-dept">🏥 形成外科</div>
@@ -920,10 +926,11 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
           <hr class="spk-divider">
           <div class="spk-talk-label">講演タイトル</div>
           <div class="spk-talk">口唇と鼻における成長に応じた追加手術</div>
+          <div class="spk-hint">🔍 抄録を読む</div>
         </div>
       </div>
 
-      <div class="spk-card">
+      <div class="spk-card" onclick="openSpk('yamamoto')">
         <img class="spk-photo" src="speaker-yamamoto.jpg?v=3" alt="山本一郎先生" loading="lazy">
         <div class="spk-body">
           <span class="spk-day d2">8/2 Part 2</span>
@@ -933,16 +940,21 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
           <hr class="spk-divider">
           <div class="spk-talk-label">講演タイトル</div>
           <div class="spk-talk">歯科矯正と言葉の治療に使う装置について</div>
+          <div class="spk-hint">🔍 抄録を読む</div>
         </div>
       </div>
 
-      <div class="spk-card">
+      <div class="spk-card" onclick="openSpk('fukui')">
         <div class="spk-photo-placeholder">👩‍⚕️</div>
         <div class="spk-body">
           <span class="spk-day d2">8/2 Part 2</span>
           <div class="spk-dept">🏥 形成外科</div>
           <div class="spk-name">福井 充香 先生</div>
-          <div class="spk-org">関西医科大学 形成外科学講座</div>
+          <div class="spk-org">関西医科大学形成外科学講座</div>
+          <hr class="spk-divider">
+          <div class="spk-talk-label">講演タイトル</div>
+          <div class="spk-talk">口唇口蓋裂の骨切り術について</div>
+          <div class="spk-hint">🔍 抄録を読む</div>
         </div>
       </div>
 
@@ -967,7 +979,7 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
 
     <div class="staff-panel show reveal" id="ps">
       <div class="staff-card"><div class="sc-bar"></div><div class="sc-body"><span class="sc-dept ps">🏥 形成外科</span><div class="sc-name">上田 晃一</div><div class="sc-org">大阪府済生会吹田病院<br>大阪医科薬科大学 名誉教授</div></div></div>
-      <div class="staff-card"><div class="sc-bar"></div><div class="sc-body"><span class="sc-dept ps">🏥 形成外科</span><div class="sc-name">益岡 弘</div><div class="sc-org">関西医科大学 形成外科</div></div></div>
+      <div class="staff-card"><div class="sc-bar"></div><div class="sc-body"><span class="sc-dept ps">🏥 形成外科</span><div class="sc-name">益岡 弘</div><div class="sc-org">関西医科大学形成外科学講座</div></div></div>
       <div class="staff-card"><div class="sc-bar"></div><div class="sc-body"><span class="sc-dept ps">🏥 形成外科</span><div class="sc-name">木村 得尚</div><div class="sc-org">広島市民病院 形成外科</div></div></div>
       <div class="staff-card"><div class="sc-bar"></div><div class="sc-body"><span class="sc-dept ps">🏥 形成外科</span><div class="sc-name">池田 実香</div><div class="sc-org">神戸医療センター中央市民病院</div></div></div>
       <div class="staff-card"><div class="sc-bar"></div><div class="sc-body"><span class="sc-dept ps">🏥 形成外科</span><div class="sc-name">片岡 和哉</div><div class="sc-org">神戸医療センター中央市民病院</div></div></div>
@@ -985,7 +997,7 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
     <div class="staff-panel reveal" id="st">
       <div class="staff-card"><div class="sc-bar purple"></div><div class="sc-body"><span class="sc-dept st">🗣 言語聴覚士</span><div class="sc-name">岩城 忍</div><div class="sc-org">神戸大学医学部附属病院 耳鼻咽喉科</div></div></div>
       <div class="staff-card"><div class="sc-bar purple"></div><div class="sc-body"><span class="sc-dept st">🗣 言語聴覚士</span><div class="sc-name">石木 陽介</div><div class="sc-org">山本歯科医院 矯正歯科クリニック</div></div></div>
-      <div class="staff-card"><div class="sc-bar purple"></div><div class="sc-body"><span class="sc-dept st">🗣 言語聴覚士</span><div class="sc-name">高井 佑実</div><div class="sc-org">関西医科大学附属病院 形成外科</div></div></div>
+      <div class="staff-card"><div class="sc-bar purple"></div><div class="sc-body"><span class="sc-dept st">🗣 言語聴覚士</span><div class="sc-name">高井 佑実</div><div class="sc-org">関西医科大学附属病院 形成外科 ST</div></div></div>
       <div class="staff-card"><div class="sc-bar purple"></div><div class="sc-body"><span class="sc-dept st">🗣 言語聴覚士</span><div class="sc-name">前川 圭子</div><div class="sc-org">神戸医療センター中央市民病院 耳鼻咽喉科</div></div></div>
       <div class="staff-card"><div class="sc-bar purple"></div><div class="sc-body"><span class="sc-dept st">🗣 言語聴覚士</span><div class="sc-name">守屋 ゆう子</div><div class="sc-org">山本歯科医院 矯正歯科クリニック</div></div></div>
     </div>
@@ -1182,6 +1194,29 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
   </div>
 </footer>
 
+<!-- SPEAKER MODAL -->
+<div id="spkModal" class="modal-ov" onclick="if(event.target===this)closeM('spkModal')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeM('spkModal')">✕</button>
+    <img class="modal-img" id="spkImg" src="" alt="" style="display:none">
+    <div class="modal-img-ph" id="spkImgPh" style="display:none"><span class="mip-icon">👨‍⚕️</span><span class="mip-t">写真準備中</span></div>
+    <div class="modal-body">
+      <span id="spkDeptTag" class="m-tag" style="background:#d1fae5;color:#065f46"></span>
+      <h3 id="spkName" style="margin-top:8px"></h3>
+      <p id="spkOrg" style="font-size:.82rem;color:#6b7280;margin-bottom:12px"></p>
+      <div id="spkTitleWrap">
+        <div style="font-size:.65rem;font-weight:900;color:var(--green-d);letter-spacing:.06em;margin-bottom:4px">講演タイトル</div>
+        <div id="spkTitle" style="font-size:.9rem;font-weight:800;color:var(--orange);border-left:3px solid var(--orange);padding-left:10px;margin-bottom:14px;line-height:1.5"></div>
+      </div>
+      <div id="spkAbstractWrap">
+        <div style="font-size:.65rem;font-weight:900;color:var(--green-d);letter-spacing:.06em;margin-bottom:6px">抄録</div>
+        <p id="spkAbstract" style="font-size:.88rem;color:#374151;line-height:1.85"></p>
+      </div>
+      <p id="spkNoAbstract" style="display:none;font-size:.85rem;color:#9ca3af;font-style:italic">抄録は現在準備中です。</p>
+    </div>
+  </div>
+</div>
+
 <!-- MODALS -->
 <div id="actModal" class="modal-ov" onclick="if(event.target===this)closeM('actModal')">
   <div class="modal-box">
@@ -1284,7 +1319,7 @@ function switchDept(id){
 // Activity data
 const ACT={
   campfire:{tag:'🧒 お子様向け',tagColor:'#ec4899',title:'🏕 キャンプファイヤー',desc:'1日目の夜（19:30〜）、夜の六甲山に大きな炎が燃え上がるキャンプのクライマックス！みんなで輪になって楽しみます。同じ仲間たちと過ごすこの夜は、一生の思い出になるはずです。',photo:'25_0823.01_22_43_19.静止画043.jpg'},
-  hamigaki:{tag:'🧒 お子様向け',tagColor:'#ec4899',title:'🦷 歯磨き指導',desc:'1日目の夜、キャンプファイヤーと並行して実施。担当：片岡和哉先生・小島将督先生による丁寧な歯磨き指導です。口唇口蓋裂のお子さんは歯並びが複雑なことも多く、正しいブラッシングが特に大切。楽しみながら正しいケアを学べます。',photo:'25_0823.01_27_05_15.静止画047 (1).jpg'},
+  hamigaki:{tag:'🧒 お子様向け',tagColor:'#ec4899',title:'🦷 歯磨き指導',desc:'1日目の夜、キャンプファイヤーと並行して実施。担当：中島健吾先生・小島将督先生による丁寧な歯磨き指導です。口唇口蓋裂のお子さんは歯並びが複雑なことも多く、正しいブラッシングが特に大切。楽しみながら正しいケアを学べます。',photo:'25_0823.01_27_05_15.静止画047 (1).jpg'},
   athletic:{tag:'🧒 お子様向け',tagColor:'#ec4899',title:'🏃 アスレチック体験（屋外）',desc:'2日目の午前（9:00〜）、六甲山の豊かな自然の中に設置されたアスレチックコースに挑戦！ロープを登ったり、丸太を渡ったり、体を思いっきり動かして楽しみます。自然の中での冒険は子どもたちの心を育てます。',photo:'25_0824.00_24_05_12.静止画017.jpg'},
   suika:{tag:'🧒 お子様向け',tagColor:'#ec4899',title:'🍉 スイカ割り',desc:'2日目の午前（9:00〜）、夏の定番スイカ割り！目隠しをして、みんなの声を頼りにスイカめがけて棒を振ります。成功したら割れたスイカをみんなで食べる、夏らしいひとときです。',photo:'25_0824.01_06_43_20.静止画029.jpg'},
   consul:{tag:'👨‍👩‍👧 保護者様向け',tagColor:'#0ea5e9',title:'💬 専門医 個別相談会',desc:'2日目の勉強会Part2終了後、各専門家による個別相談会を実施。形成外科・矯正歯科・言語聴覚士など各専門家と直接お話できます。「次の手術はいつ頃？」「言葉の発達が気になる」「矯正のタイミングは？」など、日頃聞けない疑問をこの機会にぜひ。',photo:'25_0824.00_47_52_07.静止画024.jpg'},
@@ -1317,7 +1352,35 @@ function closeM(id){
   document.getElementById(id).classList.remove('open')
   document.body.style.overflow=''
 }
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeM('actModal');closeM('staffModal');closeM('checklistModal');closeM('galModal');document.getElementById('chat-window').classList.remove('open')}})
+// ── SPEAKERS ──
+const SPK={
+  kimura:{name:'木村 得尚 先生',dept:'🏥 形成外科',org:'広島市民病院 形成外科',title:'仕上げとしての鼻修正術',abstract:'鼻の形状は成長とともに変わっていきます。そのため第２次性徴以降で鼻の修正を行うことが多くあります。まず小鼻と鼻柱の位置関係を対称にし、鼻の穴の形状を正面視でも下から仰ぎ見ても対称にし、鼻筋を通して鼻尖をスマートな形にしていきます。色々な方法を供覧していただきます。',photo:'speaker-kimura.jpg?v=3'},
+  masuoka:{name:'益岡 弘 先生',dept:'🏥 形成外科',org:'関西医科大学形成外科学講座',title:'',abstract:'',photo:'speaker-masuoka.jpg?v=3'},
+  ueda_y:{name:'上田 優輔 先生',dept:'🩺 産婦人科・臨床遺伝専門医',org:'京都大学病院 産婦人科 特定病院助教',title:'口唇口蓋裂とともに生きる ― 当事者医師から親子へのメッセージ',abstract:'産婦人科医、臨床遺伝専門医、そして口唇口蓋裂の当事者として、自身の経験を交えながらお話しします。子どもが自信を持って成長するために大切なこと、そして親が安心して子どもの可能性を信じることの意義について、一緒に考えたいと思います。',photo:'speaker-ueda-y.jpg?v=4'},
+  matsumoto:{name:'松本 学 先生',dept:'🧠 公認心理師',org:'東北大学病院 形成外科',title:'みんなで支える、子どもの新生活と集団適応のヒント',abstract:'幼児期から児童期のお子さんが、幼稚園や学校などの集団生活にスムーズに馴染むための、ご家庭での準備や専門職との上手な連携方法をお話しします。気になる学業へのお悩みにも触れながら、みんなで楽しく育ちを支えるヒントをお届けします。',photo:'speaker-matsumoto.jpg?v=3'},
+  iwaki:{name:'岩城 忍 先生',dept:'🗣 言語聴覚士',org:'神戸大学医学部附属病院 耳鼻咽喉科',title:'口唇口蓋裂を持つ子どもの発音と治療',abstract:'発音の誤りには、口唇口蓋裂の影響によるものだけでなく、発達過程で誰にでも起こり得るものも含まれています。言語聴覚士は、お子様の発達やお口の状態を評価し、訓練の必要性を判断します。本勉強会では、起こりうる発音の問題や具体的な訓練方法について紹介します。お子様に最適な支援を一緒に学びましょう。',photo:'speaker-iwaki.jpg?v=5'},
+  ueda_k:{name:'上田 晃一 先生',dept:'🏥 形成外科',org:'大阪府済生会吹田病院 形成外科 / 大阪医科薬科大学 名誉教授',title:'口唇と鼻における成長に応じた追加手術',abstract:'初回手術で100%治すことは難しい。成長期の手術侵襲は最小限に行われなければならないが、就学前5〜6歳時の鼻形成術と、10〜12歳くらいの口唇の修正術の計2回の追加手術は必要であると考えています。そのような成長に応じた追加手術について主に15年以上の長期経過例をお示しして、説明したいと思います。',photo:'speaker-ueda-k.jpg?v=4'},
+  yamamoto:{name:'山本 一郎 先生',dept:'🦷 歯科医師（矯正歯科）',org:'山本歯科医院 矯正歯科クリニック',title:'歯科矯正と言葉の治療に使う装置について',abstract:'出生の直後から矯正歯科はいろいろな場面に関わっています。今回は、乳児期、幼児期、学童期、青年期、成人期の各段階で使用される歯科的装置をご紹介します。そして、それらの使用目的、使用方法についてお話します。',photo:'speaker-yamamoto.jpg?v=3'},
+  fukui:{name:'福井 充香 先生',dept:'🏥 形成外科',org:'関西医科大学形成外科学講座',title:'口唇口蓋裂の骨切り術について',abstract:'口唇口蓋裂では、成長に伴いかみ合わせの問題が生じることがあります。特に上顎の成長が小さく、受け口やかみ合わせのずれにつながります。骨切り術という上下顎の骨のバランスを整える手術があり、かみ合わせだけでなく、お顔立ちのバランスの改善も期待できます。本発表では、その治療についてわかりやすく紹介します。',photo:null},
+}
+function openSpk(key){
+  const d=SPK[key];if(!d)return
+  const img=document.getElementById('spkImg'),ph=document.getElementById('spkImgPh')
+  if(d.photo){img.src=d.photo;img.alt=d.name;img.style.display='';ph.style.display='none'}
+  else{img.style.display='none';ph.style.display=''}
+  document.getElementById('spkDeptTag').textContent=d.dept
+  document.getElementById('spkName').textContent=d.name
+  document.getElementById('spkOrg').textContent=d.org
+  const tw=document.getElementById('spkTitleWrap'),te=document.getElementById('spkTitle')
+  if(d.title){te.textContent=d.title;tw.style.display=''}else{tw.style.display='none'}
+  const aw=document.getElementById('spkAbstractWrap'),ae=document.getElementById('spkAbstract'),na=document.getElementById('spkNoAbstract')
+  if(d.abstract){ae.textContent=d.abstract;aw.style.display='';na.style.display='none'}
+  else{aw.style.display='none';na.style.display=''}
+  document.getElementById('spkModal').classList.add('open')
+  document.body.style.overflow='hidden'
+}
+
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeM('actModal');closeM('staffModal');closeM('checklistModal');closeM('galModal');closeM('spkModal');document.getElementById('chat-window').classList.remove('open')}})
 
 // ── GALLERY ──
 function openGal(el){
@@ -1473,7 +1536,7 @@ const FAQ=[
   {kw:['締め切り','期限','いつまで','締切'],ans:'申し込み締め切りは2026年7月25日（土）です。お早めにお申し込みください！',qr:['申し込み方法は？','参加費は？']},
   {kw:['アクセス','場所','会場','六甲','行き方','交通','電車'],ans:'会場は「神戸市立自然の家 六甲施設」（神戸市灘区六甲山町中一里山1-1）です。阪急「六甲」駅または阪神「御影」駅からバスでアクセスできます。お車の場合は阪神高速3号神戸線「魚崎IC」から約20分。駐車場もあります。',qr:['プログラムは？','宿泊について']},
   {kw:['プログラム','スケジュール','内容','何をする','なにをする'],ans:'1日目（8/1）：受付14:30→開会式16:00→夕食18:00→キャンプファイヤー・歯磨き指導 / 治療勉強会Part1（19:30）→懇親会21:00。2日目（8/2）：朝食8:00→スイカ割り・アスレチック / 治療勉強会Part2・個別相談会（9:00）→昼食12:00→閉会式13:00→解散14:00です。',qr:['アクティビティは？','専門医は？']},
-  {kw:['専門医','先生','相談','形成外科','矯正歯科','言語聴覚士','言語治療','産婦人科','公認心理士'],ans:'第27回は形成外科・矯正歯科・言語聴覚士・産婦人科・公認心理士のスペシャリスト18名が参加予定です。勉強会Part1講師：木村尚得先生・益岡弘先生・松本学先生、患者代表：上田優輔先生。Part2講師：岩城忍先生・上田晃一先生・山本一郎先生。歯磨き指導担当：片岡和哉先生・小島将督先生。個別相談会や懇親会で直接お話できます！',qr:['プログラムは？','申し込み方法は？']},
+  {kw:['専門医','先生','相談','形成外科','矯正歯科','言語聴覚士','言語治療','産婦人科','公認心理士'],ans:'第27回は形成外科・矯正歯科・言語聴覚士・産婦人科・公認心理士のスペシャリスト18名が参加予定です。勉強会Part1講師：木村得尚先生・益岡弘先生・松本学先生、患者代表：上田優輔先生。Part2講師：岩城忍先生・上田晃一先生・山本一郎先生。歯磨き指導担当：中島健吾先生・小島将督先生。個別相談会や懇親会で直接お話できます！',qr:['プログラムは？','申し込み方法は？']},
   {kw:['宿泊','泊まる','部屋','施設','泊'],ans:'神戸市立自然の家 六甲施設に1泊します。宿泊費は参加費に含まれています。',qr:['食事は？','持ち物は？','参加費は？']},
   {kw:['食事','ご飯','食べ物','アレルギー','食'],ans:'夕食・朝食・昼食が参加費に含まれます。食物アレルギーがある場合は申し込み時に必ずご連絡ください。',qr:['持ち物は？','参加費は？']},
   {kw:['持ち物','準備','何を持','荷物'],ans:'着替え・タオル・洗面用具・パジャマ・運動靴・雨具・保険証コピーなどが必要です。ページ内の「持ち物チェックリスト」ボタンをタップして確認してみてください！',qr:['チェックリストを開く','申し込み方法は？']},
