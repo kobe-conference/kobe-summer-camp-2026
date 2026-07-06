@@ -372,6 +372,9 @@ body.banner-gone #news-banner{display:none}
 .testi-role{font-size:.75rem;color:var(--gray);margin-top:2px}
 .swiper-pagination-bullet-active{background:var(--green)!important}
 
+/* ── VOLUNTEER ── */
+#volunteer{background:#fff;padding:72px 20px}
+
 /* ── APPLY FORM ── */
 #apply{background:#fff;padding:72px 20px}
 .apply-box{max-width:660px;margin:0 auto;background:var(--light);border-radius:24px;padding:36px 40px;border:2px solid #e2e8f0}
@@ -523,6 +526,7 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
     <a href="#activities">体験</a>
     <a href="#speakers">講師</a>
     <a href="#staff">専門医</a>
+    <a href="#volunteer">ボランティア</a>
     <a href="#fees">参加費</a>
     <a href="#contact" class="hdr-cta">申し込む</a>
   </nav>
@@ -1013,6 +1017,31 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
 </section>
 <div class="wave"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" height="48"><path d="M0,48 C360,0 1080,48 1440,0 L1440,48 L0,48Z" fill="#fff"/></svg></div>
 
+<!-- VOLUNTEER -->
+<section id="volunteer">
+  <div class="container">
+    <div class="s-title reveal"><h2>ボランティア<span>募集</span></h2></div>
+    <p class="s-lead">サマーキャンプの運営をお手伝いいただけるボランティアスタッフを募集しています。子どもたちと一緒に楽しい時間を作ってくださる方、ぜひご応募ください。</p>
+    <div class="apply-box reveal">
+      <form id="volunteerForm" onsubmit="submitVolunteer(event)">
+        <div class="form-grid">
+          <div class="form-group full">
+            <label class="form-label">お名前<span class="req">*</span></label>
+            <input class="form-input" id="v-name" type="text" placeholder="山田 太郎" required>
+          </div>
+          <div class="form-group full">
+            <label class="form-label">メールアドレス<span class="req">*</span></label>
+            <input class="form-input" id="v-email" type="email" placeholder="example@mail.com" required>
+          </div>
+        </div>
+        <button type="submit" class="form-submit">📨 ボランティアに応募する</button>
+        <p class="form-note">送信後、メールアプリが開きます。内容を確認して「送信」してください。</p>
+      </form>
+    </div>
+  </div>
+</section>
+<div class="wave"><svg viewBox="0 0 1440 48" preserveAspectRatio="none" height="48"><path d="M0,48 C360,0 1080,48 1440,0 L1440,48 L0,48Z" fill="#fff"/></svg></div>
+
 <!-- FEES -->
 <section id="fees">
   <div class="container">
@@ -1481,6 +1510,14 @@ function submitApply(e){
   const g=id=>document.getElementById(id).value
   const body=`第27回 神戸カンファレンス サマーキャンプ（2026年8月1日〜2日）参加申し込み\n\nお名前：${g('f-name')}\nメール：${g('f-email')}\n電話番号：${g('f-tel')}\n大人の人数：${g('f-adults')}名\nお子様の人数：${g('f-children')}名\nお子様の年齢：${g('f-childage')}\nご質問・メッセージ：\n${g('f-msg')}`
   window.location.href=`mailto:kobecon23@gmail.com?subject=${encodeURIComponent('第27回 神戸カンファレンス サマーキャンプ2026 参加申し込み')}&body=${encodeURIComponent(body)}`
+}
+
+// ── VOLUNTEER FORM ──
+function submitVolunteer(e){
+  e.preventDefault()
+  const g=id=>document.getElementById(id).value
+  const body=`ボランティア応募\n\nお名前：${g('v-name')}\nメールアドレス：${g('v-email')}`
+  window.location.href=`mailto:kobecon23@gmail.com?subject=${encodeURIComponent('第27回 神戸カンファレンス サマーキャンプ2026 ボランティア応募')}&body=${encodeURIComponent(body)}`
 }
 
 // ── CHECKLIST ──
