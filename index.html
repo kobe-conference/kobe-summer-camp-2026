@@ -637,7 +637,7 @@ body.high-contrast{filter:contrast(1.55) brightness(0.95)}
           <div class="ac-row"><span class="ac-l">日時</span><span>受付 <strong>2026年8月1日(土) 14:30〜</strong>（開会式 16:00）〜8月2日(日) 14:00 解散</span></div>
           <div class="ac-row"><span class="ac-l">会場</span><span>神戸市立自然の家「そうぞうのすみか」六甲施設<br><small style="color:#6b7280">兵庫県神戸市灘区六甲山町中一里山1-1</small></span></div>
           <div class="ac-row"><span class="ac-l">対象</span><span>口唇口蓋裂のお子さんとそのご家族</span></div>
-          <div class="ac-row"><span class="ac-l">締切</span><span style="color:#ef4444;font-weight:900">2026年7月25日(土)<span class="deadline-badge" id="dl-badge">--日後</span></span></div>
+          <div class="ac-row"><span class="ac-l">締切</span><span style="color:#ef4444;font-weight:900">2026年7月25日(土)<span class="deadline-badge" id="dl-badge2">--日後</span></span></div>
         </div>
       </div>
       <div class="reveal-r">
@@ -1462,10 +1462,12 @@ function updateDeadline(){
   const target=new Date('2026-07-25T23:59:59+09:00')
   const diff=target-new Date()
   const badge=document.getElementById('dl-badge')
+  const badge2=document.getElementById('dl-badge2')
   if(diff<=0){
     const box=document.getElementById('dl-days')
     if(box)box.closest('.dl-cd').innerHTML='<div style="color:#fbbf24;font-weight:900;font-size:1rem">⚠️ 申し込み締め切りを過ぎています</div>'
     if(badge)badge.textContent='締切済'
+    if(badge2)badge2.textContent='締切済'
     return
   }
   const d=Math.floor(diff/86400000)
@@ -1475,6 +1477,7 @@ function updateDeadline(){
   const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=String(v).padStart(2,'0')}
   set('dl-days',d);set('dl-hours',h);set('dl-mins',m);set('dl-secs',s)
   if(badge)badge.textContent='あと'+d+'日'
+  if(badge2)badge2.textContent='あと'+d+'日'
 }
 setInterval(updateDeadline,1000);updateDeadline()
 
