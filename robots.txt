@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kobe-conference.github.io/kobe-summer-camp-2026/sitemap.xml
